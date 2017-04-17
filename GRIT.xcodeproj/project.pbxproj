@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01A87FF81EA57AA200BAE383 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01A87FF71EA57AA200BAE383 /* Storyboard.storyboard */; };
+		01A87FFA1EA585D400BAE383 /* MenteeProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A87FF91EA585D400BAE383 /* MenteeProfileViewController.swift */; };
 		4FBC7A8204AA0247492C10BA /* Pods_GRIT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C5089CF92A82486597B4527 /* Pods_GRIT.framework */; };
 		9B319F761E959AFC003D7097 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B319F751E959AFC003D7097 /* Main.storyboard */; };
 		9B319F791E959B52003D7097 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B319F781E959B52003D7097 /* ViewController.swift */; };
@@ -21,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		01A87FF71EA57AA200BAE383 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		01A87FF91EA585D400BAE383 /* MenteeProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenteeProfileViewController.swift; sourceTree = "<group>"; };
 		2C5089CF92A82486597B4527 /* Pods_GRIT.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GRIT.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B52795D5FFE81331E38C5C9 /* Pods-GRIT.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GRIT.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GRIT/Pods-GRIT.debug.xcconfig"; sourceTree = "<group>"; };
 		9B319F751E959AFC003D7097 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -53,6 +57,8 @@
 		01F666C11E9C431D00196C1C /* Mentee */ = {
 			isa = PBXGroup;
 			children = (
+				01A87FF71EA57AA200BAE383 /* Storyboard.storyboard */,
+				01A87FF91EA585D400BAE383 /* MenteeProfileViewController.swift */,
 			);
 			name = Mentee;
 			path = ..;
@@ -219,6 +225,7 @@
 				9B3796E91E8CB76400453245 /* Assets.xcassets in Resources */,
 				9B3796E71E8CB76400453245 /* Signin.storyboard in Resources */,
 				9B319F761E959AFC003D7097 /* Main.storyboard in Resources */,
+				01A87FF81EA57AA200BAE383 /* Storyboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,6 +286,7 @@
 			files = (
 				9B319F791E959B52003D7097 /* ViewController.swift in Sources */,
 				9B3796F61E8CBB1A00453245 /* RoundBorderUIButton.swift in Sources */,
+				01A87FFA1EA585D400BAE383 /* MenteeProfileViewController.swift in Sources */,
 				9B3796E41E8CB76400453245 /* SignInViewController.swift in Sources */,
 				9B3796E21E8CB76400453245 /* AppDelegate.swift in Sources */,
 				9B3796F41E8CBA8A00453245 /* RoundBorderUIView.swift in Sources */,
