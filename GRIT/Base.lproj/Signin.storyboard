@@ -67,7 +67,7 @@
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zaK-gM-qR9" customClass="RoundBorderUIButton" customModule="GRIT" customModuleProvider="target">
                                                         <rect key="frame" x="165.5" y="0.0" width="145.5" height="40"/>
-                                                        <color key="backgroundColor" red="0.40000000000000002" green="1" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="backgroundColor" red="0.9798591411313079" green="0.98435062170028687" blue="0.92531780244273587" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <state key="normal" title="Sign In">
                                                             <color key="titleColor" red="0.16383099334075701" green="0.021277937813499515" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
