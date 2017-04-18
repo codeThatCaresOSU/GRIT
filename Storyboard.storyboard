@@ -37,18 +37,34 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="usl-a2-1XQ">
-                                                    <rect key="frame" x="67" y="3" width="240" height="128"/>
+                                                    <rect key="frame" x="8" y="3" width="240" height="128"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="usl-a2-1XQ" secondAttribute="height" multiplier="15:8" id="Tng-Xn-wx9"/>
                                                     </constraints>
                                                 </imageView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kOs-vl-29F">
+                                                    <rect key="frame" x="268" y="52" width="99" height="30"/>
+                                                    <color key="backgroundColor" red="0.68668866911134274" green="0.67421552058786216" blue="0.7273316062176165" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="kOs-vl-29F" secondAttribute="height" multiplier="33:10" id="SzK-g1-W2l"/>
+                                                    </constraints>
+                                                    <color key="tintColor" red="0.0" green="0.23595792898765966" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <state key="normal" title="Update Profile"/>
+                                                    <connections>
+                                                        <action selector="updateProfile:" destination="REi-J1-90i" eventType="touchUpInside" id="5CG-Nr-M1P"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="usl-a2-1XQ" secondAttribute="trailing" constant="68" id="AeT-l4-4Fs"/>
+                                                <constraint firstAttribute="trailing" secondItem="usl-a2-1XQ" secondAttribute="trailing" constant="127" id="AeT-l4-4Fs"/>
                                                 <constraint firstItem="usl-a2-1XQ" firstAttribute="top" secondItem="mRN-QE-25l" secondAttribute="top" constant="3" id="Axj-13-tDF"/>
                                                 <constraint firstAttribute="bottom" secondItem="usl-a2-1XQ" secondAttribute="bottom" constant="4.5" id="BCr-Ti-9JX"/>
-                                                <constraint firstItem="usl-a2-1XQ" firstAttribute="leading" secondItem="mRN-QE-25l" secondAttribute="leading" constant="67" id="lRF-3k-bzl"/>
-                                                <constraint firstAttribute="trailing" secondItem="usl-a2-1XQ" secondAttribute="trailing" constant="68" id="oDI-uS-sa6"/>
+                                                <constraint firstItem="kOs-vl-29F" firstAttribute="top" secondItem="mRN-QE-25l" secondAttribute="topMargin" constant="44" id="Khe-aL-jzo"/>
+                                                <constraint firstItem="kOs-vl-29F" firstAttribute="leading" secondItem="usl-a2-1XQ" secondAttribute="trailing" constant="20" id="gNj-WJ-TV4"/>
+                                                <constraint firstItem="kOs-vl-29F" firstAttribute="trailing" secondItem="mRN-QE-25l" secondAttribute="trailingMargin" id="lBL-fy-m3u"/>
+                                                <constraint firstItem="usl-a2-1XQ" firstAttribute="leading" secondItem="mRN-QE-25l" secondAttribute="leading" constant="8" id="lRF-3k-bzl"/>
+                                                <constraint firstAttribute="trailing" secondItem="usl-a2-1XQ" secondAttribute="trailing" constant="127" id="oDI-uS-sa6"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="kOs-vl-29F" secondAttribute="bottom" constant="45.5" id="pHO-py-HKW"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
