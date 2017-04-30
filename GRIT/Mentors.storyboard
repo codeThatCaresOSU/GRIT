@@ -282,9 +282,6 @@
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Item" id="NE8-6t-Rwu"/>
                     <navigationItem key="navigationItem" id="ZDJ-D3-UWQ"/>
-                    <connections>
-                        <outlet property="TopCell" destination="OXV-h0-FLO" id="RfR-Tb-TSq"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FQV-OE-vwA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
