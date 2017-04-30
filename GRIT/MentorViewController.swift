@@ -6,10 +6,9 @@
 //  Copyright © 2017 CodeThatCares. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
-class MentorViewController:
-UIViewController {
+class MentorViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -1,16 +1,16 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="e0A-hh-Xly">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="SL1-VF-hCq">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Sign In View Controller-->
+        <!--Item-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="SignInViewController" customModule="GRIT" customModuleProvider="target" sceneMemberID="viewController">
@@ -23,10 +23,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ApE-Hb-HEY" customClass="RoundBorderUIView" customModule="GRIT" customModuleProvider="target">
-                                <rect key="frame" x="16" y="80" width="343" height="571"/>
+                                <rect key="frame" x="16" y="36" width="343" height="566"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Qrb-7w-gks">
-                                        <rect key="frame" x="16" y="182" width="311" height="206.5"/>
+                                        <rect key="frame" x="16" y="179.5" width="311" height="206.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign In" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sHf-kh-SwO">
                                                 <rect key="frame" x="0.0" y="0.0" width="311" height="26.5"/>
@@ -99,6 +99,7 @@
                             <constraint firstItem="ApE-Hb-HEY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="yH1-2j-NLg"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="wbU-d1-YuO"/>
                     <navigationItem key="navigationItem" id="Da2-3g-Mxv"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -146,23 +147,42 @@
             </objects>
             <point key="canvasLocation" x="1634" y="1266"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="Yow-iw-Yav">
+        <!--Item 1-->
+        <scene sceneID="Txg-oE-t09">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="e0A-hh-Xly" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="k6Y-EN-g5j">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Bsh-Ff-Z6Z"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="k7c-qt-5GI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="BjE-sL-As9" customClass="ResourcesViewController" customModule="GRIT" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="IWD-CG-M5b"/>
+                        <viewControllerLayoutGuide type="bottom" id="HUV-tg-LyD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ZOh-vJ-CYg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 1" id="e4R-l6-eOc"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K77-O1-vZ4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-82.400000000000006" y="791.15442278860576"/>
+            <point key="canvasLocation" x="780" y="107"/>
+        </scene>
+        <!--Launch Screen Controller-->
+        <scene sceneID="bJe-0U-pUt">
+            <objects>
+                <tabBarController id="SL1-VF-hCq" customClass="LaunchScreenController" customModule="GRIT" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="yt2-8W-0hf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BjE-sL-As9" kind="relationship" relationship="viewControllers" id="ydO-4X-0yx"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="qVg-RA-qeq"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BIO-hc-hCl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1335" y="209"/>
         </scene>
     </scenes>
 </document>
