@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		4FBC7A8204AA0247492C10BA /* Pods_GRIT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C5089CF92A82486597B4527 /* Pods_GRIT.framework */; };
+		683D99591EA8055F009C6F1C /* Mentors.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 683D99581EA8055F009C6F1C /* Mentors.storyboard */; };
+		683D995B1EA80841009C6F1C /* MentorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683D995A1EA80841009C6F1C /* MentorViewController.swift */; };
+		683D995E1EA81103009C6F1C /* MentorsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683D995D1EA81103009C6F1C /* MentorsModel.swift */; };
+		683D99741EA8168C009C6F1C /* MentorTableOfMenteesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683D99731EA8168C009C6F1C /* MentorTableOfMenteesModel.swift */; };
+		68EF93411EB57F5300496126 /* MentorListOfMenteesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68EF93401EB57F5300496126 /* MentorListOfMenteesTableViewCell.swift */; };
+		68EF93431EB5849B00496126 /* MenteeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68EF93421EB5849B00496126 /* MenteeTableViewController.swift */; };
 		9B319F761E959AFC003D7097 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B319F751E959AFC003D7097 /* Main.storyboard */; };
 		9B319F791E959B52003D7097 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B319F781E959B52003D7097 /* ViewController.swift */; };
 		9B3796E21E8CB76400453245 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3796E11E8CB76400453245 /* AppDelegate.swift */; };
@@ -22,6 +28,12 @@
 
 /* Begin PBXFileReference section */
 		2C5089CF92A82486597B4527 /* Pods_GRIT.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GRIT.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		683D99581EA8055F009C6F1C /* Mentors.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Mentors.storyboard; sourceTree = "<group>"; };
+		683D995A1EA80841009C6F1C /* MentorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MentorViewController.swift; sourceTree = "<group>"; };
+		683D995D1EA81103009C6F1C /* MentorsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MentorsModel.swift; sourceTree = "<group>"; };
+		683D99731EA8168C009C6F1C /* MentorTableOfMenteesModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MentorTableOfMenteesModel.swift; sourceTree = "<group>"; };
+		68EF93401EB57F5300496126 /* MentorListOfMenteesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MentorListOfMenteesTableViewCell.swift; sourceTree = "<group>"; };
+		68EF93421EB5849B00496126 /* MenteeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenteeTableViewController.swift; sourceTree = "<group>"; };
 		6B52795D5FFE81331E38C5C9 /* Pods-GRIT.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GRIT.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GRIT/Pods-GRIT.debug.xcconfig"; sourceTree = "<group>"; };
 		9B319F751E959AFC003D7097 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		9B319F781E959B52003D7097 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -50,6 +62,59 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		683D99551EA8047B009C6F1C /* Mentors */ = {
+			isa = PBXGroup;
+			children = (
+				683D99611EA81530009C6F1C /* My Mentees View */,
+				683D995C1EA810EF009C6F1C /* Model */,
+				683D99581EA8055F009C6F1C /* Mentors.storyboard */,
+				683D99571EA804B4009C6F1C /* Controller */,
+			);
+			name = Mentors;
+			sourceTree = "<group>";
+		};
+		683D99571EA804B4009C6F1C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				683D995A1EA80841009C6F1C /* MentorViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		683D995C1EA810EF009C6F1C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				683D995D1EA81103009C6F1C /* MentorsModel.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		683D99611EA81530009C6F1C /* My Mentees View */ = {
+			isa = PBXGroup;
+			children = (
+				683D99661EA81587009C6F1C /* Model */,
+				683D99631EA81565009C6F1C /* View */,
+			);
+			name = "My Mentees View";
+			sourceTree = "<group>";
+		};
+		683D99631EA81565009C6F1C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				68EF93401EB57F5300496126 /* MentorListOfMenteesTableViewCell.swift */,
+				68EF93421EB5849B00496126 /* MenteeTableViewController.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		683D99661EA81587009C6F1C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				683D99731EA8168C009C6F1C /* MentorTableOfMenteesModel.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		9B319F731E959ACE003D7097 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -117,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				9B3796E11E8CB76400453245 /* AppDelegate.swift */,
+				683D99551EA8047B009C6F1C /* Mentors */,
 				9B319F7B1E959B6B003D7097 /* Main */,
 				9B319F741E959AD7003D7097 /* Signin */,
 				9B3796E81E8CB76400453245 /* Assets.xcassets */,
@@ -206,6 +272,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				683D99591EA8055F009C6F1C /* Mentors.storyboard in Resources */,
 				9B3796EC1E8CB76400453245 /* LaunchScreen.storyboard in Resources */,
 				9B3796E91E8CB76400453245 /* Assets.xcassets in Resources */,
 				9B3796E71E8CB76400453245 /* Signin.storyboard in Resources */,
@@ -269,10 +336,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B319F791E959B52003D7097 /* ViewController.swift in Sources */,
+				68EF93411EB57F5300496126 /* MentorListOfMenteesTableViewCell.swift in Sources */,
+				683D99741EA8168C009C6F1C /* MentorTableOfMenteesModel.swift in Sources */,
 				9B3796F61E8CBB1A00453245 /* RoundBorderUIButton.swift in Sources */,
 				9B3796E41E8CB76400453245 /* SignInViewController.swift in Sources */,
+				68EF93431EB5849B00496126 /* MenteeTableViewController.swift in Sources */,
+				683D995B1EA80841009C6F1C /* MentorViewController.swift in Sources */,
 				9B3796E21E8CB76400453245 /* AppDelegate.swift in Sources */,
 				9B3796F41E8CBA8A00453245 /* RoundBorderUIView.swift in Sources */,
+				683D995E1EA81103009C6F1C /* MentorsModel.swift in Sources */,
 				9B3796F81E8CC11F00453245 /* SignUpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
