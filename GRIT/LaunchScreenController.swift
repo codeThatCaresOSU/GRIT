@@ -10,7 +10,7 @@
 import UIKit
 
 class LaunchScreenController : UITabBarController {
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -19,7 +19,10 @@ class LaunchScreenController : UITabBarController {
         tabBar.items?[1].title = "My Account"
         tabBar.items?[1].image = #imageLiteral(resourceName: "user.png")
         
-        
+    }
+    
+    func get_height() -> CGFloat {
+        return tabBar.frame.size.height
     }
     
 }
