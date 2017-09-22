@@ -40,6 +40,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     
     func setUpBaseView() {
         
+        
         // These text fields are going to pose a problem when we try to finish sign in. The method attatched to the SignUp button will be called but wont have access to these text fields. They should be declared as class properties
         
         scrollView.frame = CGRect(x: 0, y: 0, width: baseView.frame.width, height: baseView.frame.height)
@@ -147,6 +148,12 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
 }
 
 extension SignUpViewController {
+    
+    override var prefersStatusBarHidden: Bool {
+        get {
+            return true
+        }
+    }
     
     func signUserUp(_ sender: UIButton) {
             // This method doesnt have access to the textFields bev=cause they are declared within a function and not as class properties
