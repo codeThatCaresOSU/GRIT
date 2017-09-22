@@ -146,7 +146,6 @@ extension SignUpViewController {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         
-            print(scrollView.frame.maxY)
         
         if (textField.frame.maxY > (self.scrollView.frame.maxY - 250)) {
             
@@ -177,6 +176,7 @@ extension SignUpViewController : UITextViewDelegate {
             textViewPlaceholderText = textView.text
             textView.text = nil
             textView.textColor = UIColor.black
+            self.scrollView.contentOffset.y += 250
         }
     }
     
@@ -184,7 +184,17 @@ extension SignUpViewController : UITextViewDelegate {
         if textView.text.isEmpty {
             textView.text = textViewPlaceholderText
             textView.textColor = UIColor.lightGray
+            self.scrollView.contentOffset.y = 0
         }
+    }
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        
+        if text == "\n" {
+            textView.resignFirstResponder()
+        }
+        
+        return false
     }
 }
 
