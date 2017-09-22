@@ -11,11 +11,22 @@ import UIKit
 class SignUpViewController: UIViewController, UITextFieldDelegate {
 
     let scrollView = UIScrollView()
-    
     let xPositionOffSet : CGFloat = 15
     var textViewPlaceholderText = ""
-    
     @IBOutlet weak var baseView: RoundBorderUIView!
+    
+    
+    
+    fileprivate var textFieldFirstname: UITextField!
+    fileprivate var textFieldLastname: UITextField!
+    fileprivate var textFieldAge: UITextField! // This will have to be changed to a picker view
+    fileprivate var textFieldEmail: UITextField!
+    fileprivate var textFieldPassword: UITextField!
+    fileprivate var textViewInterests: UITextView!
+    
+    
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,21 +40,23 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     
     func setUpBaseView() {
         
+        // These text fields are going to pose a problem when we try to finish sign in. The method attatched to the SignUp button will be called but wont have access to these text fields. They should be declared as class properties
+        
         scrollView.frame = CGRect(x: 0, y: 0, width: baseView.frame.width, height: baseView.frame.height)
         
         let spacerView = UIView(frame: CGRect(x: 0, y: 0, width: baseView.frame.width, height: 60))
         let textlabel = getLabel(previousView: spacerView, tag: 0, title: "Sign up")
         
-        let textFieldFirstname = getTextField(previousView: textlabel, tag: 1, title: "Firstname")
-        let textFieldLastname = getTextField(previousView: textFieldFirstname, tag: 2, title: "Lastname")
-        let textFieldAge = getTextField(previousView: textFieldLastname, tag: 3, title: "Age")
-        let textFieldEmail = getTextField(previousView: textFieldAge, tag: 4, title: "Email")
-        let textFieldPassword = getTextField(previousView: textFieldEmail, tag: 5, title: "Password")
-        textFieldPassword.isSecureTextEntry = true
+        self.textFieldFirstname = getTextField(previousView: textlabel, tag: 1, title: "Firstname")
+        self.textFieldLastname = getTextField(previousView: textFieldFirstname, tag: 2, title: "Lastname")
+        self.textFieldAge = getTextField(previousView: textFieldLastname, tag: 3, title: "Age")
+        self.textFieldEmail = getTextField(previousView: textFieldAge, tag: 4, title: "Email")
+        self.textFieldPassword = getTextField(previousView: textFieldEmail, tag: 5, title: "Password")
+        self.textFieldPassword.isSecureTextEntry = true
         
-        let textViewIntrests = getTextView(previousView: textFieldPassword, height: 150, tag: 6, title: "Please type in your interests")
+        self.textViewInterests = getTextView(previousView: textFieldPassword, height: 150, tag: 6, title: "Please type in your interests")
         
-        let button = getButton(previousView: textViewIntrests, title: "Sign Up")
+        let button = getButton(previousView: textViewInterests, title: "Sign Up")
         
         scrollView.addSubview(textlabel)
         scrollView.addSubview(textFieldFirstname)
@@ -51,7 +64,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         scrollView.addSubview(textFieldAge)
         scrollView.addSubview(textFieldEmail)
         scrollView.addSubview(textFieldPassword)
-        scrollView.addSubview(textViewIntrests)
+        scrollView.addSubview(textViewInterests)
         scrollView.addSubview(button)
         
         guard let lastElementY = scrollView.subviews.last else {return}
@@ -136,7 +149,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
 extension SignUpViewController {
     
     func signUserUp(_ sender: UIButton) {
-        
+            // This method doesnt have access to the textFields bev=cause they are declared within a function and not as class properties
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -165,7 +178,7 @@ extension SignUpViewController {
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        //self.scrollView.contentOffset.y = 0
+        
     }
     
 }
