@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import AWSLambda
 
 class SignInViewController: UIViewController {
 

@@ -6,10 +6,5 @@ target 'GRIT' do
   use_frameworks!
 
   # Pods for GRIT
-
-	pod 'AWSS3'
-	pod 'AWSLambda'
-	pod 'AWSCognito'
-	pod 'AWSSNS'
-    pod 'AWSDynamoDB'
+    pod ‘Firebase/Auth’
 end

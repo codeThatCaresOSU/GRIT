@@ -10,6 +10,7 @@
 		01A87FF81EA57AA200BAE383 /* Mentee.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01A87FF71EA57AA200BAE383 /* Mentee.storyboard */; };
 		01A87FFA1EA585D400BAE383 /* MenteeProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A87FF91EA585D400BAE383 /* MenteeProfileViewController.swift */; };
 		247206DF1F74705F00F0F098 /* SavedResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247206DE1F74705F00F0F098 /* SavedResources.swift */; };
+		24AEA6F81F7473E800E03FA6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 24AEA6F71F7473E800E03FA6 /* GoogleService-Info.plist */; };
 		4FBC7A8204AA0247492C10BA /* Pods_GRIT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C5089CF92A82486597B4527 /* Pods_GRIT.framework */; };
 		683D99591EA8055F009C6F1C /* Mentors.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 683D99581EA8055F009C6F1C /* Mentors.storyboard */; };
 		683D995B1EA80841009C6F1C /* MentorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683D995A1EA80841009C6F1C /* MentorViewController.swift */; };
@@ -46,6 +47,7 @@
 		01A87FF71EA57AA200BAE383 /* Mentee.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Mentee.storyboard; sourceTree = "<group>"; };
 		01A87FF91EA585D400BAE383 /* MenteeProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenteeProfileViewController.swift; sourceTree = "<group>"; };
 		247206DE1F74705F00F0F098 /* SavedResources.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedResources.swift; sourceTree = "<group>"; };
+		24AEA6F71F7473E800E03FA6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2C5089CF92A82486597B4527 /* Pods_GRIT.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GRIT.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		683D99581EA8055F009C6F1C /* Mentors.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Mentors.storyboard; sourceTree = "<group>"; };
 		683D995A1EA80841009C6F1C /* MentorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MentorViewController.swift; sourceTree = "<group>"; };
@@ -263,6 +265,7 @@
 			children = (
 				71E061B81EB5BC500089DDFB /* LaunchScreen */,
 				9B3796E11E8CB76400453245 /* AppDelegate.swift */,
+				24AEA6F71F7473E800E03FA6 /* GoogleService-Info.plist */,
 				683D99551EA8047B009C6F1C /* Mentors */,
 				9B319F7B1E959B6B003D7097 /* Main */,
 				9B319F741E959AD7003D7097 /* Signin */,
@@ -366,6 +369,7 @@
 				9B319F761E959AFC003D7097 /* Main.storyboard in Resources */,
 				71E061C81EB5BF660089DDFB /* user.png in Resources */,
 				01A87FF81EA57AA200BAE383 /* Mentee.storyboard in Resources */,
+				24AEA6F81F7473E800E03FA6 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

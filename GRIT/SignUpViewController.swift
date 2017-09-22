@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SignUpViewController: UIViewController {
+class SignUpViewController: UIViewController, UITextFieldDelegate {
 
     let scrollView = UIScrollView()
     
@@ -33,6 +33,7 @@ class SignUpViewController: UIViewController {
         
         let spacerView = UIView(frame: CGRect(x: 0, y: 0, width: baseView.frame.width, height: 60))
         let textlabel = getLabel(previousView: spacerView, tag: 0, title: "Sign up")
+        
         let textFieldFirstname = getTextField(previousView: textlabel, tag: 1, title: "Firstname")
         let textFieldLastname = getTextField(previousView: textFieldFirstname, tag: 2, title: "Lastname")
         let textFieldAge = getTextField(previousView: textFieldLastname, tag: 3, title: "Age")
@@ -74,6 +75,7 @@ class SignUpViewController: UIViewController {
         textField.borderStyle = UITextBorderStyle.roundedRect
         textField.clearButtonMode = UITextFieldViewMode.whileEditing
         textField.tag = tag
+        textField.delegate = self
         return textField
     }
     
@@ -127,6 +129,8 @@ class SignUpViewController: UIViewController {
         button.layer.backgroundColor = colorMaster.cgColor
         return button
     }
+    
+  
 }
 
 extension SignUpViewController {
@@ -134,6 +138,13 @@ extension SignUpViewController {
     func signUserUp(_ sender: UIButton) {
         
     }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    
 }
 
 extension SignUpViewController : UITextViewDelegate {
@@ -153,3 +164,5 @@ extension SignUpViewController : UITextViewDelegate {
         }
     }
 }
+
+
