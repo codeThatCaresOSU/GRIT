@@ -147,7 +147,7 @@ extension SignUpViewController {
     func textFieldDidBeginEditing(_ textField: UITextField) {
         
         
-        if (textField.frame.maxY > (self.scrollView.frame.maxY - 250)) {
+        if (textField.frame.maxY > (self.scrollView.frame.maxY - 250) && self.scrollView.contentOffset.y == 0) {
             
             /**
                 We don't want to offset the content when the user taps on one of the fields at the top of the screen
@@ -155,7 +155,8 @@ extension SignUpViewController {
                 Thus we should only offset content that will actually be obstrcuted by the keyboard
             **/
             
-            self.scrollView.contentOffset.y += 250
+            let point = CGPoint(x: 0, y: 250)
+            self.scrollView.setContentOffset(point, animated: true)
         }
         
         
@@ -164,7 +165,7 @@ extension SignUpViewController {
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        self.scrollView.contentOffset.y = 0
+        //self.scrollView.contentOffset.y = 0
     }
     
 }
@@ -176,7 +177,13 @@ extension SignUpViewController : UITextViewDelegate {
             textViewPlaceholderText = textView.text
             textView.text = nil
             textView.textColor = UIColor.black
-            self.scrollView.contentOffset.y += 250
+            
+            if (textView.frame.maxY > self.scrollView.frame.maxY - 250) && self.scrollView.contentOffset.y < 250 {
+                let point = CGPoint(x: 0, y: 250)
+                self.scrollView.setContentOffset(point, animated: true)
+
+            }
+            
         }
     }
     
@@ -184,7 +191,7 @@ extension SignUpViewController : UITextViewDelegate {
         if textView.text.isEmpty {
             textView.text = textViewPlaceholderText
             textView.textColor = UIColor.lightGray
-            self.scrollView.contentOffset.y = 0
+            //self.scrollView.contentOffset.y = 0
         }
     }
     
