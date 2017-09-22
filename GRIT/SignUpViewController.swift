@@ -144,6 +144,29 @@ extension SignUpViewController {
         return true
     }
     
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        
+            print(scrollView.frame.maxY)
+        
+        if (textField.frame.maxY > (self.scrollView.frame.maxY - 250)) {
+            
+            /**
+                We don't want to offset the content when the user taps on one of the fields at the top of the screen
+                that causes content that would not even be obstructed by the keyboard to go to the top of the screen. 
+                Thus we should only offset content that will actually be obstrcuted by the keyboard
+            **/
+            
+            self.scrollView.contentOffset.y += 250
+        }
+        
+        
+        
+        
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        self.scrollView.contentOffset.y = 0
+    }
     
 }
 
