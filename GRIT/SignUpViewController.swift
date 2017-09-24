@@ -23,7 +23,9 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     fileprivate var textFieldEmail: UITextField!
     fileprivate var textFieldPassword: UITextField!
     fileprivate var textViewInterests: UITextView!
-    
+    fileprivate var tapRecognizer: UITapGestureRecognizer!
+    fileprivate var selectedTextFIeld: UITextField!
+    fileprivate var selectedTextView: UITextView!
     
     
     
@@ -58,6 +60,9 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         self.textViewInterests = getTextView(previousView: textFieldPassword, height: 150, tag: 6, title: "Please type in your interests")
         
         let button = getButton(previousView: textViewInterests, title: "Sign Up")
+        
+        self.tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.viewWasTapped))
+        self.view.addGestureRecognizer(self.tapRecognizer)
         
         scrollView.addSubview(textlabel)
         scrollView.addSubview(textFieldFirstname)
@@ -156,7 +161,20 @@ extension SignUpViewController {
     }
     
     func signUserUp(_ sender: UIButton) {
-            // This method doesnt have access to the textFields bev=cause they are declared within a function and not as class properties
+        var user = User(email: self.textFieldEmail.text!, password: self.textFieldPassword.text!)
+        user.firstName = textFieldFirstname.text!
+        user.lastName = textFieldLastname.text!
+        FirebaseManager.sharedInstance.createUser(user: user)
+    }
+    
+    func viewWasTapped() {
+        if let field = self.selectedTextFIeld {
+            field.resignFirstResponder()
+        }
+        
+        if let view = self.selectedTextView {
+            view.resignFirstResponder()
+        }
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -165,6 +183,8 @@ extension SignUpViewController {
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
+        
+        self.selectedTextFIeld = textField
         
         
         if (textField.frame.maxY > (self.scrollView.frame.maxY - 250) && self.scrollView.contentOffset.y == 0) {
@@ -197,6 +217,7 @@ extension SignUpViewController : UITextViewDelegate {
             textViewPlaceholderText = textView.text
             textView.text = nil
             textView.textColor = UIColor.black
+            self.selectedTextView = textView
             
             if (textView.frame.maxY > self.scrollView.frame.maxY - 250) && self.scrollView.contentOffset.y < 250 {
                 let point = CGPoint(x: 0, y: 250)

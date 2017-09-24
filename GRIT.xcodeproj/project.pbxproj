@@ -10,7 +10,10 @@
 		01A87FF81EA57AA200BAE383 /* Mentee.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01A87FF71EA57AA200BAE383 /* Mentee.storyboard */; };
 		01A87FFA1EA585D400BAE383 /* MenteeProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A87FF91EA585D400BAE383 /* MenteeProfileViewController.swift */; };
 		247206DF1F74705F00F0F098 /* SavedResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247206DE1F74705F00F0F098 /* SavedResources.swift */; };
+		248E1EF21F7824D300F1C591 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248E1EF11F7824D300F1C591 /* User.swift */; };
+		248E1EF41F7826C700F1C591 /* CoredataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248E1EF31F7826C700F1C591 /* CoredataManager.swift */; };
 		24AEA6F81F7473E800E03FA6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 24AEA6F71F7473E800E03FA6 /* GoogleService-Info.plist */; };
+		24AED03B1F781F310068059A /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AED03A1F781F310068059A /* FirebaseManager.swift */; };
 		4FBC7A8204AA0247492C10BA /* Pods_GRIT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C5089CF92A82486597B4527 /* Pods_GRIT.framework */; };
 		683D99591EA8055F009C6F1C /* Mentors.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 683D99581EA8055F009C6F1C /* Mentors.storyboard */; };
 		683D995B1EA80841009C6F1C /* MentorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683D995A1EA80841009C6F1C /* MentorViewController.swift */; };
@@ -47,7 +50,10 @@
 		01A87FF71EA57AA200BAE383 /* Mentee.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Mentee.storyboard; sourceTree = "<group>"; };
 		01A87FF91EA585D400BAE383 /* MenteeProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenteeProfileViewController.swift; sourceTree = "<group>"; };
 		247206DE1F74705F00F0F098 /* SavedResources.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedResources.swift; sourceTree = "<group>"; };
+		248E1EF11F7824D300F1C591 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		248E1EF31F7826C700F1C591 /* CoredataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoredataManager.swift; sourceTree = "<group>"; };
 		24AEA6F71F7473E800E03FA6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		24AED03A1F781F310068059A /* FirebaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		2C5089CF92A82486597B4527 /* Pods_GRIT.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GRIT.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		683D99581EA8055F009C6F1C /* Mentors.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Mentors.storyboard; sourceTree = "<group>"; };
 		683D995A1EA80841009C6F1C /* MentorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MentorViewController.swift; sourceTree = "<group>"; };
@@ -104,6 +110,16 @@
 			);
 			name = Mentee;
 			path = ..;
+			sourceTree = "<group>";
+		};
+		24AED0391F781F200068059A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				248E1EF11F7824D300F1C591 /* User.swift */,
+				24AED03A1F781F310068059A /* FirebaseManager.swift */,
+				248E1EF31F7826C700F1C591 /* CoredataManager.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		683D99551EA8047B009C6F1C /* Mentors */ = {
@@ -207,6 +223,7 @@
 		9B319F741E959AD7003D7097 /* Signin */ = {
 			isa = PBXGroup;
 			children = (
+				24AED0391F781F200068059A /* Model */,
 				9B319F771E959B25003D7097 /* Controller */,
 				9B3796E51E8CB76400453245 /* Signin.storyboard */,
 			);
@@ -440,6 +457,8 @@
 				71E3B7631EDFCB3D000BEA8A /* ResourcesRequestLocation.swift in Sources */,
 				9B3796E41E8CB76400453245 /* SignInViewController.swift in Sources */,
 				68EF93431EB5849B00496126 /* MenteeTableViewController.swift in Sources */,
+				248E1EF41F7826C700F1C591 /* CoredataManager.swift in Sources */,
+				24AED03B1F781F310068059A /* FirebaseManager.swift in Sources */,
 				683D995B1EA80841009C6F1C /* MentorViewController.swift in Sources */,
 				9B3796E21E8CB76400453245 /* AppDelegate.swift in Sources */,
 				71E061CA1EB5BF980089DDFB /* ResourcesViewController.swift in Sources */,
@@ -447,6 +466,7 @@
 				683D995E1EA81103009C6F1C /* MentorsModel.swift in Sources */,
 				9B3796F81E8CC11F00453245 /* SignUpViewController.swift in Sources */,
 				71195CDE1EE0D738008F60F5 /* ResourcesMessage.swift in Sources */,
+				248E1EF21F7824D300F1C591 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
