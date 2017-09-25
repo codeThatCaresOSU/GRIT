@@ -28,20 +28,25 @@ class FirebaseManager  {
             
             else {
                 self.isUserSignedIn = true
-                self.currentUid = user.uid
+                self.currentUid = firUser?.uid
+                user.uid = self.currentUid
                 print("User Creation Success")
+                self.createCustomUser(user: user)
             }
         }
-        
-        
-        self.createCustomUser(user: user)
-        
-        
-        
     }
     
     func createCustomUser(user: User) {
-        self.databaseReference.setValue(self.currentUid)
+        
+        
+        
+        
+        var dictionary = Dictionary<String, String>()
+        dictionary["First Name"] = user.firstName
+        dictionary["Last Name"] = user.lastName
+        dictionary["Age"] = user.age
+        dictionary["Description"] = user.description
+        self.databaseReference.child(user.uid).setValue(dictionary)
     }
     
     

@@ -9,12 +9,13 @@
 import Foundation
 
 
-struct User {
+class User {
     var email: String!
     var password: String!
     var firstName: String!
     var lastName: String!
-    var age: Int!
+    var age: String!
+    var description: String!
     var uid: String!
     
     init(email: String, password: String!) {

@@ -164,6 +164,8 @@ extension SignUpViewController {
         var user = User(email: self.textFieldEmail.text!, password: self.textFieldPassword.text!)
         user.firstName = textFieldFirstname.text!
         user.lastName = textFieldLastname.text!
+        user.age = textFieldAge.text
+        user.description = textViewInterests.text
         FirebaseManager.sharedInstance.createUser(user: user)
     }
     
