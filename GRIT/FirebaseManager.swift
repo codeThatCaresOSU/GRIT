@@ -16,11 +16,14 @@ class FirebaseManager  {
     private var databaseReference = Database.database().reference().child("Users")
     private var isUserSignedIn: Bool!
     private var currentUid: String!
+    private var currentUser: User!
     
     
     
-    func createUser(user: User) {
+    func createUser(user: User, completion: (() -> ())?) {
+        
         Auth.auth().createUser(withEmail: user.email, password: user.password) { (firUser, error) in
+            
             if error != nil {
                 self.isUserSignedIn = false
                 print("Error signing user up \(String(describing: error?.localizedDescription))")
@@ -31,22 +34,65 @@ class FirebaseManager  {
                 self.currentUid = firUser?.uid
                 user.uid = self.currentUid
                 print("User Creation Success")
-                self.createCustomUser(user: user)
+                self.createCustomUser(user: user, completion: completion)
             }
         }
     }
     
-    func createCustomUser(user: User) {
-        
-        
-        
-        
+    func createCustomUser(user: User, completion: (() -> ())?) {
         var dictionary = Dictionary<String, String>()
         dictionary["First Name"] = user.firstName
         dictionary["Last Name"] = user.lastName
         dictionary["Age"] = user.age
         dictionary["Description"] = user.description
         self.databaseReference.child(user.uid).setValue(dictionary)
+        self.currentUser = user
+        completion?()
+    }
+    
+    func getCurrentUser() -> User{
+ 
+       return self.currentUser
+    }
+    
+    func loginUser(email: String, password: String) {
+        Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
+            
+            let userReturn = User()
+            
+            guard let uid = user?.uid else {return }
+            
+            if error == nil {
+                print("User login success")
+                
+                self.isUserSignedIn = true
+                userReturn.uid = uid
+                userReturn.email = user?.email
+                
+                let dictionary = self.getData(path: uid) // Get our saved info from the database
+                
+                userReturn.firstName = dictionary?["First Name"] as? String
+                userReturn.lastName = dictionary?["Last Name"] as? String
+                userReturn.age = dictionary?["Age"] as? String
+                userReturn.description = dictionary?["Description"] as? String
+                
+            }
+            
+            self.currentUser = userReturn
+        }
+    }
+    
+    func getData(path: String) -> [String: AnyObject]? {
+        
+        var returnObject: [String: AnyObject]? = [:]
+        
+        self.databaseReference.child(path).observe(.value) { (snap: DataSnapshot) in
+            if let object = snap.value as? [String: AnyObject] {
+                print(snap)
+                returnObject = object
+            }
+        }
+        return returnObject
     }
     
     

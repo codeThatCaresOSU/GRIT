@@ -161,12 +161,13 @@ extension SignUpViewController {
     }
     
     func signUserUp(_ sender: UIButton) {
-        var user = User(email: self.textFieldEmail.text!, password: self.textFieldPassword.text!)
+        let user = User(email: self.textFieldEmail.text!, password: self.textFieldPassword.text!)
         user.firstName = textFieldFirstname.text!
         user.lastName = textFieldLastname.text!
         user.age = textFieldAge.text
         user.description = textViewInterests.text
-        FirebaseManager.sharedInstance.createUser(user: user)
+        FirebaseManager.sharedInstance.createUser(user: user, completion:  nil)
+        self.dismiss(animated: true, completion: nil)
     }
     
     func viewWasTapped() {
@@ -216,8 +217,7 @@ extension SignUpViewController : UITextViewDelegate {
     
     func textViewDidBeginEditing(_ textView: UITextView) {
         if textView.textColor == UIColor.lightGray {
-            textViewPlaceholderText = textView.text
-            textView.text = nil
+            textView.text = ""
             textView.textColor = UIColor.black
             self.selectedTextView = textView
             
@@ -244,7 +244,7 @@ extension SignUpViewController : UITextViewDelegate {
             textView.resignFirstResponder()
         }
         
-        return false
+        return true
     }
 }
 
