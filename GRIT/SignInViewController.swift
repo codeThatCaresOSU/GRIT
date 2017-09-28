@@ -13,7 +13,18 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var passwordField: UITextField!
     
     @IBAction func signInButtonPressed(_ sender: Any) {
-        FirebaseManager.sharedInstance.loginUser(email: emailField.text!, password: passwordField.text!)
+        FirebaseManager.sharedInstance.loginUser(email: emailField.text!, password: passwordField.text!) { () in
+            
+            // Make sue the viewController presentation is within the completionhandler
+            
+            if FirebaseManager.sharedInstance.getUserAuthStatus() {
+                let nav = UINavigationController(rootViewController: ProfileViewController())
+                
+                self.present(nav, animated: true, completion: nil)
+            }
+        }
+        
+        
         
     }
 
@@ -37,6 +48,10 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
+    }
+    
+    func doneButtonPressed() {
+        self.dismiss(animated: true, completion: nil)
     }
 
 

@@ -168,6 +168,8 @@ extension SignUpViewController {
         user.description = textViewInterests.text
         FirebaseManager.sharedInstance.createUser(user: user, completion:  nil)
         self.dismiss(animated: true, completion: nil)
+        
+        
     }
     
     func viewWasTapped() {

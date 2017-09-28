@@ -14,9 +14,17 @@ import FirebaseAuth
 class FirebaseManager  {
     static var sharedInstance = FirebaseManager()
     private var databaseReference = Database.database().reference().child("Users")
-    private var isUserSignedIn: Bool!
+    private var isUserSignedIn: Bool = false
     private var currentUid: String!
     private var currentUser: User!
+    
+    
+    
+    
+    
+    func getUserAuthStatus() -> Bool{
+        return self.isUserSignedIn
+    }
     
     
     
@@ -55,7 +63,7 @@ class FirebaseManager  {
        return self.currentUser
     }
     
-    func loginUser(email: String, password: String) {
+    func loginUser(email: String, password: String, completion: (()->())?) {
         Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
             
             let userReturn = User()
@@ -79,6 +87,7 @@ class FirebaseManager  {
             }
             
             self.currentUser = userReturn
+            completion?()
         }
     }
     
