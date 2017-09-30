@@ -23,11 +23,8 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
                 self.present(nav, animated: true, completion: nil)
             }
         }
-        
-        
-        
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupView()
