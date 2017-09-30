@@ -14,7 +14,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     let xPositionOffSet : CGFloat = 15
     var textViewPlaceholderText = ""
     @IBOutlet weak var baseView: RoundBorderUIView!
-    private var errorMessage: String = ""
+    fileprivate var errorMessage: String = ""
     
     
     fileprivate var textFieldFirstname: UITextField!
@@ -153,10 +153,10 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         var isFilled = true
         var error = ""
         if textFieldFirstname.text == "" {
-            error = "Please fill in your first name."
+            error = "Please enter your first name."
             isFilled = false
         } else if textFieldLastname.text == "" {
-            error = "Please fill in your last name."
+            error = "Please enter your last name."
             isFilled = false
         } else if textFieldAge.text == "" {
             error = "Please enter your age."
@@ -175,10 +175,15 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         return isFilled
     }
     
-    // Returns error message to be used in UIAlertView
+    // Sends a UI Alert to the user to specify what elements they have to still fill out
     
-    func getErrorMessage() -> String {
-        return errorMessage
+    func alertUser(_ errorMessage: String) {
+        let alert = UIAlertController(title: "Error Signing Up", message: errorMessage, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { _ in
+            print("The Ok alert occured.")
+        }))
+        
+        self.present(alert, animated: true, completion: nil)
     }
 }
 
@@ -201,7 +206,7 @@ extension SignUpViewController {
             FirebaseManager.sharedInstance.createUser(user: user, completion:  nil)
             self.dismiss(animated: true, completion: nil)
         } else {
-            print(getErrorMessage())
+            alertUser(errorMessage)
         }
     }
     
