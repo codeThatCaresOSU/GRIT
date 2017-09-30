@@ -14,7 +14,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     let xPositionOffSet : CGFloat = 15
     var textViewPlaceholderText = ""
     @IBOutlet weak var baseView: RoundBorderUIView!
-    
+    private var errorMessage: String = ""
     
     
     fileprivate var textFieldFirstname: UITextField!
@@ -28,11 +28,9 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     fileprivate var selectedTextView: UITextView!
     
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
     
@@ -41,7 +39,6 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     }
     
     func setUpBaseView() {
-        
         
         // These text fields are going to pose a problem when we try to finish sign in. The method attatched to the SignUp button will be called but wont have access to these text fields. They should be declared as class properties
         
@@ -149,7 +146,40 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         return button
     }
     
-  
+    // Validates to make sure all fields are not empty so profile can be generated 
+    
+    func validateInput() -> Bool {
+        // Check each textField and make sure it is filled out, if not set the error message
+        var isFilled = true
+        var error = ""
+        if textFieldFirstname.text == "" {
+            error = "Please fill in your first name."
+            isFilled = false
+        } else if textFieldLastname.text == "" {
+            error = "Please fill in your last name."
+            isFilled = false
+        } else if textFieldAge.text == "" {
+            error = "Please enter your age."
+            isFilled = false
+        } else if textFieldEmail.text == "" {
+            error = "Please enter your email."
+            isFilled = false
+        } else if textFieldPassword.text == "" {
+            error = "Please enter your password."
+            isFilled = false
+        } else if textViewInterests.text == "" {
+            error = "Please enter your interests."
+            isFilled = false
+        }
+        errorMessage = error
+        return isFilled
+    }
+    
+    // Returns error message to be used in UIAlertView
+    
+    func getErrorMessage() -> String {
+        return errorMessage
+    }
 }
 
 extension SignUpViewController {
@@ -161,15 +191,18 @@ extension SignUpViewController {
     }
     
     func signUserUp(_ sender: UIButton) {
-        let user = User(email: self.textFieldEmail.text!, password: self.textFieldPassword.text!)
-        user.firstName = textFieldFirstname.text!
-        user.lastName = textFieldLastname.text!
-        user.age = textFieldAge.text
-        user.description = textViewInterests.text
-        FirebaseManager.sharedInstance.createUser(user: user, completion:  nil)
-        self.dismiss(animated: true, completion: nil)
-        
-        
+        // Only sign up user if all text fields are filled in
+        if (validateInput()) {
+            let user = User(email: self.textFieldEmail.text!, password: self.textFieldPassword.text!)
+            user.firstName = textFieldFirstname.text!
+            user.lastName = textFieldLastname.text!
+            user.age = textFieldAge.text
+            user.description = textViewInterests.text
+            FirebaseManager.sharedInstance.createUser(user: user, completion:  nil)
+            self.dismiss(animated: true, completion: nil)
+        } else {
+            print(getErrorMessage())
+        }
     }
     
     func viewWasTapped() {
@@ -203,10 +236,7 @@ extension SignUpViewController {
             let point = CGPoint(x: 0, y: 250)
             self.scrollView.setContentOffset(point, animated: true)
         }
-        
-        
-        
-        
+    
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
