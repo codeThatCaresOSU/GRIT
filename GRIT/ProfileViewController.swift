@@ -43,7 +43,7 @@ class ProfileViewController: UIViewController {
         
     }
     
-    func doneButtonPressed() {
+    @objc func doneButtonPressed() {
         self.dismiss(animated: true, completion: nil)
     }
     

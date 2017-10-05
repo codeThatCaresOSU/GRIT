@@ -195,7 +195,7 @@ extension SignUpViewController {
         }
     }
     
-    func signUserUp(_ sender: UIButton) {
+    @objc func signUserUp(_ sender: UIButton) {
         // Only sign up user if all text fields are filled in
         if (validateInput()) {
             let user = User(email: self.textFieldEmail.text!, password: self.textFieldPassword.text!)
@@ -210,7 +210,7 @@ extension SignUpViewController {
         }
     }
     
-    func viewWasTapped() {
+    @objc func viewWasTapped() {
         if let field = self.selectedTextFIeld {
             field.resignFirstResponder()
         }

@@ -17,7 +17,7 @@ func load_message(x: CGFloat, y: CGFloat, width: CGFloat, height: CGFloat) -> UI
     message.text = "A map of helpful resources to get back on your feet! Tap any filter to get specific locations and tap again to remove them"
     message.textColor = UIColor.black
     message.textAlignment = .center
-    message.font = UIFont.systemFont(ofSize: 14, weight: UIFontWeightThin)
+    message.font = UIFont.systemFont(ofSize: 14, weight: UIFont.Weight.thin)
     message.numberOfLines = 10
     message.layer.cornerRadius = 10
     message.clipsToBounds = true
