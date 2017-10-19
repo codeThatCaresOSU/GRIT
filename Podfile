@@ -5,11 +5,8 @@ target 'GRIT' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
 
-  # Pods for GRIT
-
-	pod 'AWSS3'
-	pod 'AWSLambda'
-	pod 'AWSCognito'
-	pod 'AWSSNS'
-    pod 'AWSDynamoDB'
+    pod ‘Firebase/Auth’
+    pod ‘Firebase’
+    pod ‘Firebase/Database’
+    pod ‘Firebase/Core’
 end

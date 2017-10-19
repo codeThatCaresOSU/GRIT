@@ -19,6 +19,8 @@ class LaunchScreenController : UITabBarController {
         tabBar.items?[1].title = "My Account"
         tabBar.items?[1].image = #imageLiteral(resourceName: "user.png")
         
+        
+        
     }
     
     func get_height() -> CGFloat {

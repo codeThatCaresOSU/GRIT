@@ -73,7 +73,7 @@ func load_buttons(x: CGFloat, y: CGFloat, width: CGFloat, height: CGFloat, name:
     
     let label = UILabel()
     label.text = name
-    label.font = UIFont.systemFont(ofSize: 10, weight: UIFontWeightThin)
+    label.font = UIFont.systemFont(ofSize: 10, weight: UIFont.Weight.thin)
     label.sizeToFit()
     label.textAlignment = .center
     

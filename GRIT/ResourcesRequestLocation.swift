@@ -20,11 +20,11 @@ func request_location_access(location_manager: CLLocationManager, map: MKMapView
             map.userTrackingMode = .follow
             map.showsUserLocation = true
             return
-        case .denied, .restricted:
-            let span = MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5)
-            let region = MKCoordinateRegion(center: locale[0], span: span)
-            map.setRegion(region, animated: true)
-            return
+//        case .denied, .restricted:
+//            let span = MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5)
+//            let region = MKCoordinateRegion(center: Locale[0], span: span)
+//            map.setRegion(region, animated: true)
+//            return
         default:
             location_manager.requestWhenInUseAuthorization()
     }

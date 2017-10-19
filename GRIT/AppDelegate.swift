@@ -7,23 +7,25 @@
 //
 
 import UIKit
-import AWSCore
+import Firebase
+
 
 let colorMaster = UIColor(displayP3Red: 222/255, green: 49/255, blue: 99/255, alpha: 1)
 let successColor = UIColor(displayP3Red: 102/255, green: 255/255, blue: 153/255, alpha: 1)
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UIAlertViewDelegate {
 
     var window: UIWindow?
+    
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+
         
-        let credentialProvider = AWSCognitoCredentialsProvider(regionType: .usEast1, identityPoolId: "us-east-1:6d158fb5-da7e-4121-9bc4-e1779a9d1dac")
-        let configuration = AWSServiceConfiguration(region: .usEast1, credentialsProvider: credentialProvider)
-        AWSServiceManager.default().defaultServiceConfiguration = configuration
+        FirebaseApp.configure()
+        
+        
         
         return true
     }
