@@ -28,7 +28,6 @@
 		71E061C71EB5BF660089DDFB /* refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = 71E061C01EB5BF660089DDFB /* refresh.png */; };
 		71E061C81EB5BF660089DDFB /* user.png in Resources */ = {isa = PBXBuildFile; fileRef = 71E061C11EB5BF660089DDFB /* user.png */; };
 		71E061CA1EB5BF980089DDFB /* ResourcesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E061C91EB5BF980089DDFB /* ResourcesViewController.swift */; };
-		71E3B7611EDFCA6E000BEA8A /* SavedResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E3B7601EDFCA6E000BEA8A /* SavedResources.swift */; };
 		71E3B7631EDFCB3D000BEA8A /* ResourcesRequestLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E3B7621EDFCB3D000BEA8A /* ResourcesRequestLocation.swift */; };
 		9B319F761E959AFC003D7097 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B319F751E959AFC003D7097 /* Main.storyboard */; };
 		9B319F791E959B52003D7097 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B319F781E959B52003D7097 /* ViewController.swift */; };
@@ -65,7 +64,6 @@
 		71E061C01EB5BF660089DDFB /* refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = refresh.png; path = Images/refresh.png; sourceTree = SOURCE_ROOT; };
 		71E061C11EB5BF660089DDFB /* user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = user.png; path = Images/user.png; sourceTree = SOURCE_ROOT; };
 		71E061C91EB5BF980089DDFB /* ResourcesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourcesViewController.swift; sourceTree = "<group>"; };
-		71E3B7601EDFCA6E000BEA8A /* SavedResources.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedResources.swift; sourceTree = "<group>"; };
 		71E3B7621EDFCB3D000BEA8A /* ResourcesRequestLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourcesRequestLocation.swift; sourceTree = "<group>"; };
 		9B319F751E959AFC003D7097 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		9B319F781E959B52003D7097 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -165,7 +163,6 @@
 				71195CDD1EE0D738008F60F5 /* ResourcesMessage.swift */,
 				71E3B7621EDFCB3D000BEA8A /* ResourcesRequestLocation.swift */,
 				71195CDB1EE0C6E7008F60F5 /* ResourcesTitle.swift */,
-				71E3B7601EDFCA6E000BEA8A /* SavedResources.swift */,
 				7136E97B1EDF672800899E39 /* Resources Images */,
 			);
 			name = Resources;
@@ -436,7 +433,6 @@
 				9B3796E41E8CB76400453245 /* SignInViewController.swift in Sources */,
 				68EF93431EB5849B00496126 /* MenteeTableViewController.swift in Sources */,
 				683D995B1EA80841009C6F1C /* MentorViewController.swift in Sources */,
-				71E3B7611EDFCA6E000BEA8A /* SavedResources.swift in Sources */,
 				9B3796E21E8CB76400453245 /* AppDelegate.swift in Sources */,
 				71E061CA1EB5BF980089DDFB /* ResourcesViewController.swift in Sources */,
 				9B3796F41E8CBA8A00453245 /* RoundBorderUIView.swift in Sources */,
