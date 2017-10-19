@@ -59,55 +59,35 @@ class FirebaseManager  {
     }
     
     func getCurrentUser() -> User{
- 
        return self.currentUser
     }
     
-    func loginUser(email: String, password: String, completion: (()->())?) {
+    func loginUser(email: String, password: String, completion: ((User)->())?) {
         Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
             
             let userReturn = User()
             
             guard let uid = user?.uid else {return }
+            guard let email = user?.email else {return}
             
             if error == nil {
                 print("User login success")
                 
                 self.isUserSignedIn = true
                 userReturn.uid = uid
-                userReturn.email = user?.email
+                userReturn.email = email
                 
-                let dictionary = self.getData(path: uid) // Get our saved info from the database
-                
-                userReturn.firstName = dictionary?["First Name"] as? String
-                userReturn.lastName = dictionary?["Last Name"] as? String
-                userReturn.age = dictionary?["Age"] as? String
-                userReturn.description = dictionary?["Description"] as? String
-                
-            }
-            
-            self.currentUser = userReturn
-            completion?()
-        }
-    }
-    
-    func getData(path: String) -> [String: AnyObject]? {
-        
-        var returnObject: [String: AnyObject]? = [:]
-        
-        self.databaseReference.child(path).observe(.value) { (snap: DataSnapshot) in
-            if let object = snap.value as? [String: AnyObject] {
-                print(snap)
-                returnObject = object
+                self.databaseReference.child(uid).observeSingleEvent(of: .value) { (snap: DataSnapshot) in
+                    if let data = snap.value as? [String: AnyObject] {
+                        userReturn.firstName = data["First Name"] as? String
+                        userReturn.lastName = data["Last Name"] as? String
+                        userReturn.age = data["Age"] as? String
+                        userReturn.description = data["Description"] as? String
+                        self.currentUser = userReturn
+                        completion?(userReturn)
+                    }
+                }
             }
         }
-        return returnObject
     }
-    
-    
-    
-    
-    
-    
-    
 }

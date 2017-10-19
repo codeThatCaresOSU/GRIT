@@ -13,15 +13,16 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var passwordField: UITextField!
     
     @IBAction func signInButtonPressed(_ sender: Any) {
-        FirebaseManager.sharedInstance.loginUser(email: emailField.text!, password: passwordField.text!) { () in
+        FirebaseManager.sharedInstance.loginUser(email: emailField.text!, password: passwordField.text!) { (user: User) in
             
             // Make sue the viewController presentation is within the completionhandler
             
-            if FirebaseManager.sharedInstance.getUserAuthStatus() {
+          
                 let nav = UINavigationController(rootViewController: ProfileViewController())
+                nav.navigationBar.topItem?.title = user.firstName
                 
                 self.present(nav, animated: true, completion: nil)
-            }
+
         }
     }
     
