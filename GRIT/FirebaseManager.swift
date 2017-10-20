@@ -26,6 +26,17 @@ class FirebaseManager  {
         return self.isUserSignedIn
     }
     
+    func logout() {
+        do {
+            try Auth.auth().signOut()
+        }
+        catch {
+            print("Error signing out")
+        }
+        
+    }
+    
+    
     
     
     func createUser(user: User, completion: (() -> ())?) {

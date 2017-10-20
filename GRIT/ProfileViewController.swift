@@ -13,12 +13,14 @@ import UIKit
 class ProfileViewController: UIViewController {
     
     
-    private var doneButton: UIBarButtonItem!
+   
     private var profileImageView: UIImageView!
     private var nameLabel: UILabel!
     private var lineView: UIView!
     private var currentUser: User!
     private var scrollView: UIScrollView!
+    private var logoutButton: UIBarButtonItem!
+  
     
     
     override func viewDidLoad() {
@@ -58,6 +60,9 @@ class ProfileViewController: UIViewController {
         self.scrollView.translatesAutoresizingMaskIntoConstraints = false
         self.scrollView.contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height)
         self.scrollView.showsVerticalScrollIndicator = false
+        
+        self.logoutButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(self.logoutPressed))
+        
 //
 //        let point = CGPoint(x: 0, y:45)
 //        self.scrollView.setContentOffset(point, animated: true)
@@ -70,6 +75,8 @@ class ProfileViewController: UIViewController {
         self.scrollView.addSubview(self.lineView)
         
         self.view.addSubview(self.scrollView)
+        
+        self.navigationItem.rightBarButtonItem = self.logoutButton
         
         self.setupConstraints()
     }
@@ -89,5 +96,9 @@ class ProfileViewController: UIViewController {
         self.lineView.topAnchor.constraint(equalTo: self.nameLabel.bottomAnchor, constant: 8).isActive = true
         self.lineView.widthAnchor.constraint(equalToConstant: self.scrollView.frame.width).isActive = true
         self.lineView.heightAnchor.constraint(equalToConstant: 1).isActive = true
+    }
+    
+    @objc func logoutPressed() {
+        FirebaseManager.sharedInstance.logout()
     }
 }
