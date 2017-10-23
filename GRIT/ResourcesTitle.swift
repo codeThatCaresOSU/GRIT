@@ -17,7 +17,7 @@ func load_title(x: CGFloat, y: CGFloat, width: CGFloat, height: CGFloat) -> UIVi
     title.text = "Resources"
     title.textColor = UIColor.black
     title.textAlignment = .center
-    title.font = UIFont.systemFont(ofSize: 34, weight: UIFontWeightThin)
+    title.font = UIFont.systemFont(ofSize: 34, weight: UIFont.Weight.thin)
     
     title_view.addSubview(title)
     

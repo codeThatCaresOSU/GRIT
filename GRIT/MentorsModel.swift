@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import AWSCognito
+
 
 //let clientDataSync = AWSCognito
 //let dataset = clientDataSync.openOrCreateDataset("")!

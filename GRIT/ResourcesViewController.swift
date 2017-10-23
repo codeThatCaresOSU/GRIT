@@ -49,7 +49,7 @@ class ResourcesViewController: UIViewController {
         title.text = "Resources"
         title.textColor = UIColor.black
         title.textAlignment = .center
-        title.font = UIFont.systemFont(ofSize: 34, weight: UIFontWeightThin)
+        title.font = UIFont.systemFont(ofSize: 34, weight: UIFont.Weight.thin)
         
         title_view.addSubview(title)
         
@@ -66,7 +66,7 @@ class ResourcesViewController: UIViewController {
         message.text = "A map of helpful resources to get back on your feet! Tap any filter to get specific locations and tap again to remove them"
         message.textColor = UIColor.black
         message.textAlignment = .center
-        message.font = UIFont.systemFont(ofSize: 14, weight: UIFontWeightThin)
+        message.font = UIFont.systemFont(ofSize: 14, weight: UIFont.Weight.thin)
         message.numberOfLines = 10
         message.layer.cornerRadius = 10
         message.clipsToBounds = true
@@ -228,7 +228,7 @@ class ResourcesViewController: UIViewController {
         sender.setImage(image, for: .normal)
         sender.imageEdgeInsets = UIEdgeInsetsMake(button_size/6,button_size/6,button_size/6,button_size/6)
         
-        title.font = UIFont.systemFont(ofSize: 10, weight: UIFontWeightThin)
+        title.font = UIFont.systemFont(ofSize: 10, weight: UIFont.Weight.thin)
         title.textAlignment = .center
         title.sizeToFit()
         let new_x = button_size/2 - title.bounds.width/2
