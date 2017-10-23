@@ -20,6 +20,10 @@ class ProfileViewController: UIViewController {
     private var currentUser: User!
     private var scrollView: UIScrollView!
     private var logoutButton: UIBarButtonItem!
+    private var descriptionView: UITextView!
+    private var ageLabel: UILabel!
+    private var fromLabel: UILabel!
+    private var roleLabel: UILabel!
   
     
     
@@ -61,18 +65,41 @@ class ProfileViewController: UIViewController {
         self.scrollView.contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height)
         self.scrollView.showsVerticalScrollIndicator = false
         
-        self.logoutButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(self.logoutPressed))
+        self.descriptionView = UITextView(frame: CGRect(x: 0, y: 0, width: self.scrollView.frame.width - 20, height: 100))
+        self.descriptionView.isEditable = false
+        self.descriptionView.translatesAutoresizingMaskIntoConstraints = false
+        self.descriptionView.text = self.currentUser.description
+        self.descriptionView.textAlignment = .natural
         
-//
-//        let point = CGPoint(x: 0, y:45)
-//        self.scrollView.setContentOffset(point, animated: true)
+        self.ageLabel = UILabel()
+        self.ageLabel.text = "Age: \(self.currentUser.age!)"
+        self.ageLabel.textColor = UIColor.lightGray
+        self.ageLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        self.fromLabel = UILabel()
+        self.fromLabel.text = "From: Columbus, Ohio"
+        self.fromLabel.textColor = UIColor.lightGray
+        self.fromLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        self.roleLabel = UILabel()
+        self.roleLabel.text = "Role: Mentor"
+        self.roleLabel.textColor = UIColor.lightGray
+        self.roleLabel.translatesAutoresizingMaskIntoConstraints = false
         
         
-        self.navigationController?.navigationBar.topItem?.title = self.currentUser.firstName
+        self.logoutButton = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(self.logoutPressed))
+
+        
+        
+        self.navigationController?.navigationBar.topItem?.title = "\(self.currentUser.firstName!) \(self.currentUser.lastName!)"
         
         self.scrollView.addSubview(self.profileImageView)
+        self.scrollView.addSubview(self.ageLabel)
+        self.scrollView.addSubview(self.fromLabel)
         self.scrollView.addSubview(self.nameLabel)
         self.scrollView.addSubview(self.lineView)
+        self.scrollView.addSubview(self.descriptionView)
+        self.scrollView.addSubview(self.roleLabel)
         
         self.view.addSubview(self.scrollView)
         
@@ -92,10 +119,25 @@ class ProfileViewController: UIViewController {
         self.nameLabel.centerXAnchor.constraint(equalTo: self.profileImageView.centerXAnchor).isActive = true
         self.nameLabel.topAnchor.constraint(equalTo: self.profileImageView.bottomAnchor, constant: 10).isActive = true
         
+        self.ageLabel.topAnchor.constraint(equalTo: self.profileImageView.topAnchor, constant: 10).isActive = true
+        self.ageLabel.centerXAnchor.constraint(equalTo: self.view.centerXAnchor, constant: 10).isActive = true
+        
+        self.fromLabel.topAnchor.constraint(equalTo: self.ageLabel.bottomAnchor, constant: 8).isActive = true
+        self.fromLabel.leftAnchor.constraint(equalTo: self.ageLabel.leftAnchor, constant: 0).isActive = true
+        
+        self.roleLabel.topAnchor.constraint(equalTo: self.fromLabel.bottomAnchor, constant: 8).isActive = true
+        self.roleLabel.leftAnchor.constraint(equalTo: self.fromLabel.leftAnchor).isActive = true
+        
+        
         self.lineView.centerXAnchor.constraint(equalTo: self.scrollView.centerXAnchor).isActive = true
-        self.lineView.topAnchor.constraint(equalTo: self.nameLabel.bottomAnchor, constant: 8).isActive = true
+        self.lineView.topAnchor.constraint(equalTo: self.nameLabel.bottomAnchor, constant: 4).isActive = true
         self.lineView.widthAnchor.constraint(equalToConstant: self.scrollView.frame.width).isActive = true
         self.lineView.heightAnchor.constraint(equalToConstant: 1).isActive = true
+        
+        self.descriptionView.leftAnchor.constraint(equalTo: self.nameLabel.leftAnchor).isActive = true
+        self.descriptionView.topAnchor.constraint(equalTo: self.nameLabel.bottomAnchor, constant: 8).isActive = true
+        self.descriptionView.widthAnchor.constraint(equalTo: self.scrollView.widthAnchor, constant: -20).isActive = true
+        self.descriptionView.heightAnchor.constraint(equalToConstant: 100).isActive = true
     }
     
     @objc func logoutPressed() {
