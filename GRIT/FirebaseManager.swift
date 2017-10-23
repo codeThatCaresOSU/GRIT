@@ -14,12 +14,10 @@ import FirebaseAuth
 class FirebaseManager  {
     static var sharedInstance = FirebaseManager()
     private var databaseReference = Database.database().reference().child("Users")
+    private var dataBaseMapReference = Database.database().reference().child("OhioData")
     private var isUserSignedIn: Bool = false
     private var currentUid: String!
     private var currentUser: User!
-    
-    
-    
     
     
     func getUserAuthStatus() -> Bool{
@@ -90,4 +88,46 @@ class FirebaseManager  {
             }
         }
     }
+    
+    func getBusinesses(flags: Array<String>, completion: @escaping (Array<Business>) -> ()) {
+        
+        var businesses = [Business]()
+        
+        dataBaseMapReference.observe(.value, with: { (snapshot: DataSnapshot) in
+            
+            for child in snapshot.children {
+                
+                let snap = child as! DataSnapshot
+            
+                if let data = snap.value as? [String: AnyObject] {
+                
+                    let business = Business()
+                
+                    business.name = data["Name"] as? String
+                    business.category = data["Category"] as? String
+                    business.street = data["Street Address"] as? String
+                    business.city = data["City"] as? String
+                    business.state = data["State"] as? String
+                    business.zip = data["Zip"] as? Int
+
+                    /*
+                    print(business.name)
+                    print(business.street)
+                    print(business.city)
+                    print(business.state)
+                    print(business.category)
+                    print(business.zip)
+                    */
+                    
+                    businesses.append(business)
+                    
+                }
+                
+            }
+           completion(businesses)
+        })
+        //return businesses
+    }
+ 
+    
 }

@@ -18,7 +18,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
             // Make sue the viewController presentation is within the completionhandler
             
           
-                let nav = UINavigationController(rootViewController: ProfileViewController())
+                let nav = UINavigationController(rootViewController: MenteeProfileViewController())
                 nav.navigationBar.topItem?.title = user.firstName
                 
                 self.present(nav, animated: true, completion: nil)

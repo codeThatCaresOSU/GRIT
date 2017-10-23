@@ -14,7 +14,6 @@
 		248E1EF41F7826C700F1C591 /* CoredataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248E1EF31F7826C700F1C591 /* CoredataManager.swift */; };
 		24AEA6F81F7473E800E03FA6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 24AEA6F71F7473E800E03FA6 /* GoogleService-Info.plist */; };
 		24AED03B1F781F310068059A /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AED03A1F781F310068059A /* FirebaseManager.swift */; };
-		24BEC3F31F7DA63E007AB93E /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BEC3F21F7DA63E007AB93E /* ProfileViewController.swift */; };
 		4FBC7A8204AA0247492C10BA /* Pods_GRIT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C5089CF92A82486597B4527 /* Pods_GRIT.framework */; };
 		683D99591EA8055F009C6F1C /* Mentors.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 683D99581EA8055F009C6F1C /* Mentors.storyboard */; };
 		683D995B1EA80841009C6F1C /* MentorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683D995A1EA80841009C6F1C /* MentorViewController.swift */; };
@@ -22,9 +21,9 @@
 		683D99741EA8168C009C6F1C /* MentorTableOfMenteesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683D99731EA8168C009C6F1C /* MentorTableOfMenteesModel.swift */; };
 		68EF93411EB57F5300496126 /* MentorListOfMenteesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68EF93401EB57F5300496126 /* MentorListOfMenteesTableViewCell.swift */; };
 		68EF93431EB5849B00496126 /* MenteeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68EF93421EB5849B00496126 /* MenteeTableViewController.swift */; };
-		71195CDC1EE0C6E7008F60F5 /* ResourcesTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71195CDB1EE0C6E7008F60F5 /* ResourcesTitle.swift */; };
-		71195CDE1EE0D738008F60F5 /* ResourcesMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71195CDD1EE0D738008F60F5 /* ResourcesMessage.swift */; };
-		71195CE01EE0DA8E008F60F5 /* ResourcesFilters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71195CDF1EE0DA8E008F60F5 /* ResourcesFilters.swift */; };
+		716DE9151F9D6F4900A48F0E /* Business.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716DE9141F9D6F4900A48F0E /* Business.swift */; };
+		7179C73F1F9A65B9003C8DCA /* ResourcesRequestLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7179C73E1F9A65B9003C8DCA /* ResourcesRequestLocation.swift */; };
+		717C99121F9945810018F670 /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717C99111F9945810018F670 /* ModalViewController.swift */; };
 		71E061BA1EB5BEE60089DDFB /* LaunchScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E061B91EB5BEE60089DDFB /* LaunchScreenController.swift */; };
 		71E061C21EB5BF660089DDFB /* bus.png in Resources */ = {isa = PBXBuildFile; fileRef = 71E061BB1EB5BF660089DDFB /* bus.png */; };
 		71E061C31EB5BF660089DDFB /* diploma.png in Resources */ = {isa = PBXBuildFile; fileRef = 71E061BC1EB5BF660089DDFB /* diploma.png */; };
@@ -34,7 +33,6 @@
 		71E061C71EB5BF660089DDFB /* refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = 71E061C01EB5BF660089DDFB /* refresh.png */; };
 		71E061C81EB5BF660089DDFB /* user.png in Resources */ = {isa = PBXBuildFile; fileRef = 71E061C11EB5BF660089DDFB /* user.png */; };
 		71E061CA1EB5BF980089DDFB /* ResourcesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E061C91EB5BF980089DDFB /* ResourcesViewController.swift */; };
-		71E3B7631EDFCB3D000BEA8A /* ResourcesRequestLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E3B7621EDFCB3D000BEA8A /* ResourcesRequestLocation.swift */; };
 		9B319F761E959AFC003D7097 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B319F751E959AFC003D7097 /* Main.storyboard */; };
 		9B319F791E959B52003D7097 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B319F781E959B52003D7097 /* ViewController.swift */; };
 		9B3796E21E8CB76400453245 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3796E11E8CB76400453245 /* AppDelegate.swift */; };
@@ -64,9 +62,9 @@
 		68EF93401EB57F5300496126 /* MentorListOfMenteesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MentorListOfMenteesTableViewCell.swift; sourceTree = "<group>"; };
 		68EF93421EB5849B00496126 /* MenteeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenteeTableViewController.swift; sourceTree = "<group>"; };
 		6B52795D5FFE81331E38C5C9 /* Pods-GRIT.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GRIT.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GRIT/Pods-GRIT.debug.xcconfig"; sourceTree = "<group>"; };
-		71195CDB1EE0C6E7008F60F5 /* ResourcesTitle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourcesTitle.swift; sourceTree = "<group>"; };
-		71195CDD1EE0D738008F60F5 /* ResourcesMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourcesMessage.swift; sourceTree = "<group>"; };
-		71195CDF1EE0DA8E008F60F5 /* ResourcesFilters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourcesFilters.swift; sourceTree = "<group>"; };
+		716DE9141F9D6F4900A48F0E /* Business.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Business.swift; sourceTree = "<group>"; };
+		7179C73E1F9A65B9003C8DCA /* ResourcesRequestLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourcesRequestLocation.swift; sourceTree = "<group>"; };
+		717C99111F9945810018F670 /* ModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
 		71E061B91EB5BEE60089DDFB /* LaunchScreenController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchScreenController.swift; sourceTree = "<group>"; };
 		71E061BB1EB5BF660089DDFB /* bus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bus.png; path = Images/bus.png; sourceTree = SOURCE_ROOT; };
 		71E061BC1EB5BF660089DDFB /* diploma.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = diploma.png; path = Images/diploma.png; sourceTree = SOURCE_ROOT; };
@@ -76,7 +74,6 @@
 		71E061C01EB5BF660089DDFB /* refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = refresh.png; path = Images/refresh.png; sourceTree = SOURCE_ROOT; };
 		71E061C11EB5BF660089DDFB /* user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = user.png; path = Images/user.png; sourceTree = SOURCE_ROOT; };
 		71E061C91EB5BF980089DDFB /* ResourcesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourcesViewController.swift; sourceTree = "<group>"; };
-		71E3B7621EDFCB3D000BEA8A /* ResourcesRequestLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourcesRequestLocation.swift; sourceTree = "<group>"; };
 		9B319F751E959AFC003D7097 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		9B319F781E959B52003D7097 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9B3796DE1E8CB76400453245 /* GRIT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GRIT.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -118,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				248E1EF11F7824D300F1C591 /* User.swift */,
+				716DE9141F9D6F4900A48F0E /* Business.swift */,
 				24AED03A1F781F310068059A /* FirebaseManager.swift */,
 				248E1EF31F7826C700F1C591 /* CoredataManager.swift */,
 			);
@@ -181,10 +179,8 @@
 			isa = PBXGroup;
 			children = (
 				71E061C91EB5BF980089DDFB /* ResourcesViewController.swift */,
-				71195CDF1EE0DA8E008F60F5 /* ResourcesFilters.swift */,
-				71195CDD1EE0D738008F60F5 /* ResourcesMessage.swift */,
-				71E3B7621EDFCB3D000BEA8A /* ResourcesRequestLocation.swift */,
-				71195CDB1EE0C6E7008F60F5 /* ResourcesTitle.swift */,
+				7179C73E1F9A65B9003C8DCA /* ResourcesRequestLocation.swift */,
+				717C99111F9945810018F670 /* ModalViewController.swift */,
 				7136E97B1EDF672800899E39 /* Resources Images */,
 				247206DE1F74705F00F0F098 /* SavedResources.swift */,
 			);
@@ -463,25 +459,24 @@
 			files = (
 				9B319F791E959B52003D7097 /* ViewController.swift in Sources */,
 				247206DF1F74705F00F0F098 /* SavedResources.swift in Sources */,
-				71195CDC1EE0C6E7008F60F5 /* ResourcesTitle.swift in Sources */,
 				68EF93411EB57F5300496126 /* MentorListOfMenteesTableViewCell.swift in Sources */,
 				71E061BA1EB5BEE60089DDFB /* LaunchScreenController.swift in Sources */,
 				683D99741EA8168C009C6F1C /* MentorTableOfMenteesModel.swift in Sources */,
-				71195CE01EE0DA8E008F60F5 /* ResourcesFilters.swift in Sources */,
 				9B3796F61E8CBB1A00453245 /* RoundBorderUIButton.swift in Sources */,
+				7179C73F1F9A65B9003C8DCA /* ResourcesRequestLocation.swift in Sources */,
 				01A87FFA1EA585D400BAE383 /* MenteeProfileViewController.swift in Sources */,
-				71E3B7631EDFCB3D000BEA8A /* ResourcesRequestLocation.swift in Sources */,
+				717C99121F9945810018F670 /* ModalViewController.swift in Sources */,
 				9B3796E41E8CB76400453245 /* SignInViewController.swift in Sources */,
 				68EF93431EB5849B00496126 /* MenteeTableViewController.swift in Sources */,
 				248E1EF41F7826C700F1C591 /* CoredataManager.swift in Sources */,
 				24AED03B1F781F310068059A /* FirebaseManager.swift in Sources */,
 				683D995B1EA80841009C6F1C /* MentorViewController.swift in Sources */,
 				9B3796E21E8CB76400453245 /* AppDelegate.swift in Sources */,
+				716DE9151F9D6F4900A48F0E /* Business.swift in Sources */,
 				71E061CA1EB5BF980089DDFB /* ResourcesViewController.swift in Sources */,
 				9B3796F41E8CBA8A00453245 /* RoundBorderUIView.swift in Sources */,
 				683D995E1EA81103009C6F1C /* MentorsModel.swift in Sources */,
 				9B3796F81E8CC11F00453245 /* SignUpViewController.swift in Sources */,
-				71195CDE1EE0D738008F60F5 /* ResourcesMessage.swift in Sources */,
 				248E1EF21F7824D300F1C591 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
