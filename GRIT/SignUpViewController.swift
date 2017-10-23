@@ -42,6 +42,8 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         
         // These text fields are going to pose a problem when we try to finish sign in. The method attatched to the SignUp button will be called but wont have access to these text fields. They should be declared as class properties
         
+        
+        
         scrollView.frame = CGRect(x: 0, y: 0, width: baseView.frame.width, height: baseView.frame.height)
         
         let spacerView = UIView(frame: CGRect(x: 0, y: 0, width: baseView.frame.width, height: 60))

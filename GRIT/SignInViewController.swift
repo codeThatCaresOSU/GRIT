@@ -20,8 +20,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
           
                 let nav = UINavigationController(rootViewController: MenteeProfileViewController())
                 nav.navigationBar.topItem?.title = user.firstName
-                
-                self.present(nav, animated: true, completion: nil)
+                NotificationCenter.default.post(Notification(name: Notification.Name(rawValue: "login"), object: nil))
 
         }
     }

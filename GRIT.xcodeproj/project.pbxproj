@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		01A87FF81EA57AA200BAE383 /* Mentee.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01A87FF71EA57AA200BAE383 /* Mentee.storyboard */; };
 		01A87FFA1EA585D400BAE383 /* MenteeProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A87FF91EA585D400BAE383 /* MenteeProfileViewController.swift */; };
+		2444555D1F995A1100EAF9E2 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2444555C1F995A1100EAF9E2 /* Helper.swift */; };
 		247206DF1F74705F00F0F098 /* SavedResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247206DE1F74705F00F0F098 /* SavedResources.swift */; };
 		248E1EF21F7824D300F1C591 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248E1EF11F7824D300F1C591 /* User.swift */; };
 		248E1EF41F7826C700F1C591 /* CoredataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248E1EF31F7826C700F1C591 /* CoredataManager.swift */; };
@@ -48,6 +49,7 @@
 /* Begin PBXFileReference section */
 		01A87FF71EA57AA200BAE383 /* Mentee.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Mentee.storyboard; sourceTree = "<group>"; };
 		01A87FF91EA585D400BAE383 /* MenteeProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenteeProfileViewController.swift; sourceTree = "<group>"; };
+		2444555C1F995A1100EAF9E2 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		247206DE1F74705F00F0F098 /* SavedResources.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedResources.swift; sourceTree = "<group>"; };
 		248E1EF11F7824D300F1C591 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		248E1EF31F7826C700F1C591 /* CoredataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoredataManager.swift; sourceTree = "<group>"; };
@@ -109,6 +111,14 @@
 			);
 			name = Mentee;
 			path = ..;
+			sourceTree = "<group>";
+		};
+		2444555B1F995A0100EAF9E2 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				2444555C1F995A1100EAF9E2 /* Helper.swift */,
+			);
+			name = Helper;
 			sourceTree = "<group>";
 		};
 		24AED0391F781F200068059A /* Model */ = {
@@ -279,6 +289,7 @@
 		9B3796E01E8CB76400453245 /* GRIT */ = {
 			isa = PBXGroup;
 			children = (
+				2444555B1F995A0100EAF9E2 /* Helper */,
 				71E061B81EB5BC500089DDFB /* LaunchScreen */,
 				9B3796E11E8CB76400453245 /* AppDelegate.swift */,
 				24AEA6F71F7473E800E03FA6 /* GoogleService-Info.plist */,
@@ -478,6 +489,7 @@
 				683D995E1EA81103009C6F1C /* MentorsModel.swift in Sources */,
 				9B3796F81E8CC11F00453245 /* SignUpViewController.swift in Sources */,
 				248E1EF21F7824D300F1C591 /* User.swift in Sources */,
+				2444555D1F995A1100EAF9E2 /* Helper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
