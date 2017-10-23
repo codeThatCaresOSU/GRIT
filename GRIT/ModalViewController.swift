@@ -159,13 +159,13 @@ class ModalViewController: UIViewController {
         sender.setImage(image, for: .normal)
         sender.imageEdgeInsets = UIEdgeInsetsMake(button_size/6,button_size/6,button_size/6,button_size/6)
         
-        var sz = CGFloat(30)
+        var size = CGFloat(30)
     
         if button_size > 70 {
-            sz = 35
+            size = 35
         }
         
-        title.font = UIFont.systemFont(ofSize: sz, weight: UIFont.Weight.thin)
+        title.font = UIFont.systemFont(ofSize: size, weight: UIFont.Weight.thin)
         title.textColor = UIColor.white
         title.textAlignment = .center
         title.sizeToFit()

@@ -120,15 +120,6 @@ class FirebaseManager  {
                     business.city = data["City"] as? String
                     business.state = data["State"] as? String
                     business.zip = data["Zip"] as? Int
-
-                    /*
-                    print(business.name)
-                    print(business.street)
-                    print(business.city)
-                    print(business.state)
-                    print(business.category)
-                    print(business.zip)
-                    */
                     
                     businesses.append(business)
                     
@@ -137,7 +128,6 @@ class FirebaseManager  {
             }
            completion(businesses)
         })
-        //return businesses
     }
  
     
