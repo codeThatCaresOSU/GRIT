@@ -206,6 +206,11 @@ extension SignUpViewController {
             user.age = textFieldAge.text
             user.description = textViewInterests.text
             FirebaseManager.sharedInstance.createUser(user: user, completion:  nil)
+            
+            CoredataManager.sharedInstance.setUserData(email: self.textFieldEmail.text!, password: self.textFieldPassword.text!, completion: {
+                NotificationCenter.default.post(Notification(name: Notification.Name(rawValue: "login"), object: nil))
+            })
+            
             self.dismiss(animated: true, completion: nil)
         } else {
             alertUser(errorMessage)

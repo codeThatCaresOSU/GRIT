@@ -15,6 +15,9 @@
 		248E1EF41F7826C700F1C591 /* CoredataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248E1EF31F7826C700F1C591 /* CoredataManager.swift */; };
 		24AEA6F81F7473E800E03FA6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 24AEA6F71F7473E800E03FA6 /* GoogleService-Info.plist */; };
 		24AED03B1F781F310068059A /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AED03A1F781F310068059A /* FirebaseManager.swift */; };
+		24F0D6B01F9EB0A3008EC48F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BEC3F21F7DA63E007AB93E /* ProfileViewController.swift */; };
+		24F0D6B21F9EB716008EC48F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24F0D6B11F9EB716008EC48F /* CoreData.framework */; };
+		24F0D6B51F9EB79C008EC48F /* Setting.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 24F0D6B31F9EB79C008EC48F /* Setting.xcdatamodeld */; };
 		4FBC7A8204AA0247492C10BA /* Pods_GRIT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C5089CF92A82486597B4527 /* Pods_GRIT.framework */; };
 		683D99591EA8055F009C6F1C /* Mentors.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 683D99581EA8055F009C6F1C /* Mentors.storyboard */; };
 		683D995B1EA80841009C6F1C /* MentorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683D995A1EA80841009C6F1C /* MentorViewController.swift */; };
@@ -55,6 +58,8 @@
 		24AEA6F71F7473E800E03FA6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		24AED03A1F781F310068059A /* FirebaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		24BEC3F21F7DA63E007AB93E /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		24F0D6B11F9EB716008EC48F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		24F0D6B41F9EB79C008EC48F /* Setting.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Setting.xcdatamodel; sourceTree = "<group>"; };
 		2C5089CF92A82486597B4527 /* Pods_GRIT.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GRIT.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		683D99581EA8055F009C6F1C /* Mentors.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Mentors.storyboard; sourceTree = "<group>"; };
 		683D995A1EA80841009C6F1C /* MentorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MentorViewController.swift; sourceTree = "<group>"; };
@@ -94,6 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24F0D6B21F9EB716008EC48F /* CoreData.framework in Frameworks */,
 				4FBC7A8204AA0247492C10BA /* Pods_GRIT.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -126,6 +132,7 @@
 				716DE9141F9D6F4900A48F0E /* Business.swift */,
 				24AED03A1F781F310068059A /* FirebaseManager.swift */,
 				248E1EF31F7826C700F1C591 /* CoredataManager.swift */,
+				24F0D6B31F9EB79C008EC48F /* Setting.xcdatamodeld */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -303,6 +310,7 @@
 		C03BF3F6E1F22160BA936A67 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				24F0D6B11F9EB716008EC48F /* CoreData.framework */,
 				2C5089CF92A82486597B4527 /* Pods_GRIT.framework */,
 			);
 			name = Frameworks;
@@ -465,12 +473,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24F0D6B51F9EB79C008EC48F /* Setting.xcdatamodeld in Sources */,
 				9B319F791E959B52003D7097 /* ViewController.swift in Sources */,
 				247206DF1F74705F00F0F098 /* SavedResources.swift in Sources */,
 				68EF93411EB57F5300496126 /* MentorListOfMenteesTableViewCell.swift in Sources */,
 				71E061BA1EB5BEE60089DDFB /* LaunchScreenController.swift in Sources */,
 				683D99741EA8168C009C6F1C /* MentorTableOfMenteesModel.swift in Sources */,
 				9B3796F61E8CBB1A00453245 /* RoundBorderUIButton.swift in Sources */,
+				24F0D6B01F9EB0A3008EC48F /* ProfileViewController.swift in Sources */,
 				01A87FFA1EA585D400BAE383 /* MenteeProfileViewController.swift in Sources */,
 				717C99121F9945810018F670 /* ModalViewController.swift in Sources */,
 				9B3796E41E8CB76400453245 /* SignInViewController.swift in Sources */,
@@ -676,6 +686,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		24F0D6B31F9EB79C008EC48F /* Setting.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				24F0D6B41F9EB79C008EC48F /* Setting.xcdatamodel */,
+			);
+			currentVersion = 24F0D6B41F9EB79C008EC48F /* Setting.xcdatamodel */;
+			path = Setting.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 9B3796D61E8CB76400453245 /* Project object */;
 }

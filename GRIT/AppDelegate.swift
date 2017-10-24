@@ -25,6 +25,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UIAlertViewDelegate {
         
         FirebaseApp.configure()
         
+        // Check if user has logged in before
+        
+        CoredataManager.sharedInstance.getUserData { (settings: [Setting]?) in
+            if let settingsData = settings {
+                if settingsData.count > 0 {
+                    FirebaseManager.sharedInstance.loginUser(email: settingsData[0].email!, password: settingsData[0].password!, completion: { (user: User) in
+                        CoredataManager.sharedInstance.userHasLoggedIn = true
+                        NotificationCenter.default.post(Notification(name: Notification.Name(rawValue: "login"), object: nil))
+                    })
+                }
+            }
+        }
+        
         
         
         return true
