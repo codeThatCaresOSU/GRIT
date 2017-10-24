@@ -15,14 +15,12 @@ class CoredataManager {
     let persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "Setting")
         container.loadPersistentStores() { (storeDescriptor: NSPersistentStoreDescription, error: Error?) in
-            
-            
+            // TO-DO: Error checking
         }
-        
-        
         return container
     }()
     var userHasLoggedIn = false
+    private var currentUserSetting: Setting!
     
     
     
@@ -42,8 +40,12 @@ class CoredataManager {
 
         
         do {
-            let setting = try self.persistentContainer.viewContext.fetch(Setting.fetchRequest())
-            completion?(setting as? [Setting])
+            let setting = try self.persistentContainer.viewContext.fetch(Setting.fetchRequest()) as [Setting]
+            
+            if setting.count > 0 {
+                self.currentUserSetting  = setting[0]
+                completion?(setting as? [Setting])
+            }
         }
         
         catch {
@@ -60,7 +62,14 @@ class CoredataManager {
         userSettings.password = password
         self.save()
         self.userHasLoggedIn = true
+        
+        self.currentUserSetting = userSettings
         completion?()
+    }
+    
+    func deleteUserData() {
+        self.persistentContainer.viewContext.delete(self.currentUserSetting)
+        self.save()
     }
     
     

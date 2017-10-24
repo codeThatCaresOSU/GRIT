@@ -87,11 +87,9 @@ class ProfileViewController: UIViewController {
         self.roleLabel.translatesAutoresizingMaskIntoConstraints = false
         
         
-        self.logoutButton = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(self.logoutPressed))
-
-        
-        
-        self.navigationController?.navigationBar.topItem?.title = "\(self.currentUser.firstName!) \(self.currentUser.lastName!)"
+        self.logoutButton = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(self.logoutPressed))
+        self.navigationItem.rightBarButtonItem = self.logoutButton
+        self.logoutButton.tintColor = UIColor.red
         
         self.scrollView.addSubview(self.profileImageView)
         self.scrollView.addSubview(self.ageLabel)
@@ -102,8 +100,7 @@ class ProfileViewController: UIViewController {
         self.scrollView.addSubview(self.roleLabel)
         
         self.view.addSubview(self.scrollView)
-        
-        self.navigationItem.rightBarButtonItem = self.logoutButton
+    
         
         self.setupConstraints()
     }
@@ -142,5 +139,8 @@ class ProfileViewController: UIViewController {
     
     @objc func logoutPressed() {
         FirebaseManager.sharedInstance.logout()
+        CoredataManager.sharedInstance.deleteUserData()
+        NotificationCenter.default.post(Notification(name: Notification.Name(rawValue: "logout"), object: nil))
+        self.dismiss(animated: true, completion: nil)
     }
 }
