@@ -132,6 +132,7 @@ class ResourcesViewController: UIViewController, ModalViewControllerDelegate, MK
                     }
             
                     let address : String! = street + city + state + newZip
+                    //print(address)
 
                     geoCoder.geocodeAddressString(address) { (placemarks, error) in
                         guard
@@ -141,7 +142,7 @@ class ResourcesViewController: UIViewController, ModalViewControllerDelegate, MK
                                 // handle no location found
                                 return
                             }
-            
+                        print(placemarks)
                         let pin = MKPointAnnotation()
                         pin.coordinate = locat.coordinate
                         pin.title = business.name
@@ -180,7 +181,7 @@ class ResourcesViewController: UIViewController, ModalViewControllerDelegate, MK
         
         if annotationView == nil {
             annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
-            //annotationView?.pinTintColor = UIColor.green
+            annotationView?.pinTintColor = UIColor.green
             annotationView?.canShowCallout = true
         } else {
             annotationView?.annotation = annotation

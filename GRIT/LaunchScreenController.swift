@@ -26,7 +26,7 @@ class LaunchScreenController : UITabBarController {
     }
     
     @objc func handleLogin() {
-        self.viewControllers![1] = Helpers.createNavigationController(viewController: ProfileViewController(), barColor: UIColor.white, title: "Profile")
+        self.viewControllers![1] = Helpers.createNavigationController(viewController: SignInViewController(), barColor: UIColor.white, title: "Profile")
         tabBar.items?[1].title = "My Account"
         tabBar.items?[1].image = #imageLiteral(resourceName: "user.png")
     }
