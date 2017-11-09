@@ -74,11 +74,11 @@ class ResourcesViewController: UIViewController, ModalViewControllerDelegate, MK
         switch status {
         case .authorizedAlways, .authorizedWhenInUse:
             
-            manager.startUpdatingLocation()
-            map.userTrackingMode = .follow
-            let span = MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5)
-            let region = MKCoordinateRegion(center: (manager.location?.coordinate)!, span: span)
-            map.setRegion(region, animated: true)
+//            manager.startUpdatingLocation()
+//            map.userTrackingMode = .follow
+//            let span = MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5)
+//            let region = MKCoordinateRegion(center: (manager.location?.coordinate)!, span: span)
+//            map.setRegion(region, animated: true)
             break
             
         case .denied, .restricted:
