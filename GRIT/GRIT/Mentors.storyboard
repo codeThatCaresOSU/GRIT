@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="XKe-ZW-CEP">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="Uir-zl-ZY2">
+            <objects>
+                <navigationController id="XKe-ZW-CEP" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="3RA-YB-7zi">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="oac-eH-Gk7" kind="relationship" relationship="rootViewController" id="2qG-wZ-Icr"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Pj-Ij-PN6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1860" y="-109"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="NYE-Zz-xuv">
+            <objects>
+                <tableViewController id="oac-eH-Gk7" customClass="MenteeTableViewController" customModule="GRIT" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="51" sectionHeaderHeight="28" sectionFooterHeight="28" id="5ha-tc-RqQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TopCell" rowHeight="120" id="OXV-h0-FLO" customClass="MentorListOfMenteesTableViewCell" customModule="GRIT" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="120"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OXV-h0-FLO" id="dXE-ed-rLo">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="119"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mentee One" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oEw-uY-aTI">
+                                            <rect key="frame" x="88" y="8" width="94" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0wi-IU-ppz">
+                                            <rect key="frame" x="8" y="8" width="72" height="72"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="72" id="MBI-WR-SYl"/>
+                                                <constraint firstAttribute="width" constant="72" id="rRa-jl-WZf"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Message - - - - - -..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="avs-sD-nuk">
+                                            <rect key="frame" x="88" y="37" width="192" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date of Last Message" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E8z-Ai-qjL">
+                                            <rect key="frame" x="88" y="66" width="166" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="oEw-uY-aTI" firstAttribute="leading" secondItem="0wi-IU-ppz" secondAttribute="trailing" constant="8" id="1eh-pB-fvk"/>
+                                        <constraint firstItem="0wi-IU-ppz" firstAttribute="leading" secondItem="dXE-ed-rLo" secondAttribute="leading" constant="8" id="6fY-xG-tvZ"/>
+                                        <constraint firstItem="0wi-IU-ppz" firstAttribute="top" secondItem="dXE-ed-rLo" secondAttribute="top" constant="8" id="ElI-Q8-lw4"/>
+                                        <constraint firstItem="oEw-uY-aTI" firstAttribute="top" secondItem="dXE-ed-rLo" secondAttribute="top" constant="8" id="X6E-YH-0u0"/>
+                                        <constraint firstItem="E8z-Ai-qjL" firstAttribute="leading" secondItem="0wi-IU-ppz" secondAttribute="trailing" constant="8" id="ZYW-eD-Sij"/>
+                                        <constraint firstItem="avs-sD-nuk" firstAttribute="top" secondItem="oEw-uY-aTI" secondAttribute="bottom" constant="8" id="kQN-Au-bpL"/>
+                                        <constraint firstItem="E8z-Ai-qjL" firstAttribute="top" secondItem="avs-sD-nuk" secondAttribute="bottom" constant="8" id="wRI-YY-aMn"/>
+                                        <constraint firstItem="avs-sD-nuk" firstAttribute="leading" secondItem="0wi-IU-ppz" secondAttribute="trailing" constant="8" id="xya-uF-Uq9"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="MenteeLabel" destination="oEw-uY-aTI" id="LxI-Wa-5G0"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="120" id="27d-mw-KgW" customClass="MentorListOfMenteesTableViewCell" customModule="GRIT" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="148" width="375" height="120"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="27d-mw-KgW" id="9bX-AA-iuM">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="119"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mentee Two" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dLE-D3-nKz">
+                                            <rect key="frame" x="88" y="8" width="94" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sUs-gR-wMK">
+                                            <rect key="frame" x="8" y="8" width="72" height="72"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="72" id="39N-kc-94a"/>
+                                                <constraint firstAttribute="width" constant="72" id="IEF-rE-h0m"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Message - - - - - -..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g78-zs-PgI">
+                                            <rect key="frame" x="88" y="37" width="192" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date of Last Message" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UIB-L5-U7o">
+                                            <rect key="frame" x="88" y="66" width="166" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="g78-zs-PgI" firstAttribute="top" secondItem="dLE-D3-nKz" secondAttribute="bottom" constant="8" id="Ewx-ka-dJJ"/>
+                                        <constraint firstItem="sUs-gR-wMK" firstAttribute="leading" secondItem="9bX-AA-iuM" secondAttribute="leading" constant="8" id="LW9-RR-28U"/>
+                                        <constraint firstItem="UIB-L5-U7o" firstAttribute="top" secondItem="g78-zs-PgI" secondAttribute="bottom" constant="8" id="Omb-Xy-Fyg"/>
+                                        <constraint firstItem="g78-zs-PgI" firstAttribute="leading" secondItem="sUs-gR-wMK" secondAttribute="trailing" constant="8" id="VoA-1A-57f"/>
+                                        <constraint firstItem="dLE-D3-nKz" firstAttribute="leading" secondItem="sUs-gR-wMK" secondAttribute="trailing" constant="8" id="Yc6-cR-d2Y"/>
+                                        <constraint firstItem="sUs-gR-wMK" firstAttribute="top" secondItem="9bX-AA-iuM" secondAttribute="top" constant="8" id="nSl-rN-xV9"/>
+                                        <constraint firstItem="dLE-D3-nKz" firstAttribute="top" secondItem="9bX-AA-iuM" secondAttribute="top" constant="8" id="u96-Cr-uQT"/>
+                                        <constraint firstItem="UIB-L5-U7o" firstAttribute="leading" secondItem="sUs-gR-wMK" secondAttribute="trailing" constant="8" id="xrn-hr-OPo"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="MenteeLabel" destination="dLE-D3-nKz" id="RC4-h9-jqC"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="120" id="xqz-hv-2dT" customClass="MentorListOfMenteesTableViewCell" customModule="GRIT" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="268" width="375" height="120"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xqz-hv-2dT" id="mdh-w1-Ets">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="119"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mentee Three" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fd1-H0-tE0">
+                                            <rect key="frame" x="88" y="8" width="107" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DYN-YS-771">
+                                            <rect key="frame" x="8" y="8" width="72" height="72"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="72" id="OhY-cp-VAo"/>
+                                                <constraint firstAttribute="height" constant="72" id="mxw-Zz-PrO"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Message - - - - - -..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oRn-30-Xpy">
+                                            <rect key="frame" x="88" y="37" width="192" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date of Last Message" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dhf-MP-Mjt">
+                                            <rect key="frame" x="88" y="66" width="166" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="DYN-YS-771" firstAttribute="leading" secondItem="mdh-w1-Ets" secondAttribute="leading" constant="8" id="AtF-lM-2pt"/>
+                                        <constraint firstItem="Fd1-H0-tE0" firstAttribute="leading" secondItem="DYN-YS-771" secondAttribute="trailing" constant="8" id="C8c-3M-JJO"/>
+                                        <constraint firstItem="Fd1-H0-tE0" firstAttribute="top" secondItem="mdh-w1-Ets" secondAttribute="top" constant="8" id="KLT-A4-dYm"/>
+                                        <constraint firstItem="oRn-30-Xpy" firstAttribute="top" secondItem="Fd1-H0-tE0" secondAttribute="bottom" constant="8" id="MqB-65-H75"/>
+                                        <constraint firstItem="Dhf-MP-Mjt" firstAttribute="top" secondItem="oRn-30-Xpy" secondAttribute="bottom" constant="8" id="OFt-RA-1do"/>
+                                        <constraint firstItem="DYN-YS-771" firstAttribute="top" secondItem="mdh-w1-Ets" secondAttribute="top" constant="8" id="Zo4-Xi-ace"/>
+                                        <constraint firstItem="oRn-30-Xpy" firstAttribute="leading" secondItem="DYN-YS-771" secondAttribute="trailing" constant="8" id="csA-se-Z9E"/>
+                                        <constraint firstItem="Dhf-MP-Mjt" firstAttribute="leading" secondItem="DYN-YS-771" secondAttribute="trailing" constant="8" id="jsm-8I-pgB"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="MenteeLabel" destination="Fd1-H0-tE0" id="t2b-Nc-Cvl"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="120" id="MmP-fj-s1O" customClass="MentorListOfMenteesTableViewCell" customModule="GRIT" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="388" width="375" height="120"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MmP-fj-s1O" id="M1K-ve-4gW">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="119"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mentee Four" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ati-mh-8pH">
+                                            <rect key="frame" x="88" y="8" width="97" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bDk-f3-Tdg">
+                                            <rect key="frame" x="8" y="8" width="72" height="72"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="72" id="pTj-bm-Eke"/>
+                                                <constraint firstAttribute="width" constant="72" id="st4-bX-WYK"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Message - - - - - -..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ojc-DE-DbA">
+                                            <rect key="frame" x="88" y="37" width="192" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date of Last Message" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="igM-vO-I89">
+                                            <rect key="frame" x="88" y="66" width="166" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Ati-mh-8pH" firstAttribute="leading" secondItem="bDk-f3-Tdg" secondAttribute="trailing" constant="8" id="7tq-ga-4eE"/>
+                                        <constraint firstItem="Ati-mh-8pH" firstAttribute="top" secondItem="M1K-ve-4gW" secondAttribute="top" constant="8" id="AdY-3Q-tmP"/>
+                                        <constraint firstItem="igM-vO-I89" firstAttribute="top" secondItem="ojc-DE-DbA" secondAttribute="bottom" constant="8" id="JSK-uj-DYW"/>
+                                        <constraint firstItem="bDk-f3-Tdg" firstAttribute="leading" secondItem="M1K-ve-4gW" secondAttribute="leading" constant="8" id="LkG-bb-nxq"/>
+                                        <constraint firstItem="igM-vO-I89" firstAttribute="leading" secondItem="bDk-f3-Tdg" secondAttribute="trailing" constant="8" id="UBm-dU-jmm"/>
+                                        <constraint firstItem="ojc-DE-DbA" firstAttribute="top" secondItem="Ati-mh-8pH" secondAttribute="bottom" constant="8" id="Wis-6S-n06"/>
+                                        <constraint firstItem="bDk-f3-Tdg" firstAttribute="top" secondItem="M1K-ve-4gW" secondAttribute="top" constant="8" id="cJE-6N-S7O"/>
+                                        <constraint firstItem="ojc-DE-DbA" firstAttribute="leading" secondItem="bDk-f3-Tdg" secondAttribute="trailing" constant="8" id="ewk-WD-Xkd"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="MenteeLabel" destination="Ati-mh-8pH" id="sKJ-C4-RjN"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="120" id="tZr-UX-rCe" customClass="MentorListOfMenteesTableViewCell" customModule="GRIT" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="508" width="375" height="120"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tZr-UX-rCe" id="Vqu-Rc-I0Q">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="119"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mentee Five" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F1H-97-XCX">
+                                            <rect key="frame" x="88" y="8" width="93" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="a0s-ZF-bvP">
+                                            <rect key="frame" x="8" y="8" width="72" height="72"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="72" id="Pw2-xd-XaV"/>
+                                                <constraint firstAttribute="height" constant="72" id="xIV-WI-oAs"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Message - - - - - -..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y6K-7a-gvc">
+                                            <rect key="frame" x="88" y="37" width="192" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date of Last Message" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YEb-Ft-vgS">
+                                            <rect key="frame" x="88" y="66" width="166" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="a0s-ZF-bvP" firstAttribute="top" secondItem="Vqu-Rc-I0Q" secondAttribute="top" constant="8" id="3Kg-dk-6pe"/>
+                                        <constraint firstItem="F1H-97-XCX" firstAttribute="leading" secondItem="a0s-ZF-bvP" secondAttribute="trailing" constant="8" id="4N5-5d-pyF"/>
+                                        <constraint firstItem="YEb-Ft-vgS" firstAttribute="leading" secondItem="a0s-ZF-bvP" secondAttribute="trailing" constant="8" id="6Ef-bz-j68"/>
+                                        <constraint firstItem="F1H-97-XCX" firstAttribute="top" secondItem="Vqu-Rc-I0Q" secondAttribute="top" constant="8" id="PNV-2A-UZm"/>
+                                        <constraint firstItem="y6K-7a-gvc" firstAttribute="top" secondItem="F1H-97-XCX" secondAttribute="bottom" constant="8" id="PYJ-Fj-HtX"/>
+                                        <constraint firstItem="a0s-ZF-bvP" firstAttribute="leading" secondItem="Vqu-Rc-I0Q" secondAttribute="leading" constant="8" id="Quy-G8-tHm"/>
+                                        <constraint firstItem="YEb-Ft-vgS" firstAttribute="top" secondItem="y6K-7a-gvc" secondAttribute="bottom" constant="8" id="gnz-UX-xWR"/>
+                                        <constraint firstItem="y6K-7a-gvc" firstAttribute="leading" secondItem="a0s-ZF-bvP" secondAttribute="trailing" constant="8" id="myv-vI-C0m"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="MenteeLabel" destination="F1H-97-XCX" id="Xf2-Wl-ghe"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="oac-eH-Gk7" id="o9t-SE-VLr"/>
+                            <outlet property="delegate" destination="oac-eH-Gk7" id="yqj-iz-wef"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Item" id="NE8-6t-Rwu"/>
+                    <navigationItem key="navigationItem" id="ZDJ-D3-UWQ"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FQV-OE-vwA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-863.20000000000005" y="-109.29535232383809"/>
+        </scene>
+    </scenes>
+</document>
