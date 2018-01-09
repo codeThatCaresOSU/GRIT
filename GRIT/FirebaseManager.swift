@@ -9,12 +9,12 @@
 import Foundation
 import FirebaseDatabase
 import FirebaseAuth
-
+import MapKit
 
 class FirebaseManager  {
     static var sharedInstance = FirebaseManager()
     private var databaseReference = Database.database().reference().child("Users")
-    private var dataBaseMapReference = Database.database().reference().child("OhioData")
+    private var dataBaseMapReference = Database.database().reference().child("MapData").child("OhioData")
     private var isUserSignedIn: Bool = false
     private var currentUid: String!
     private var currentUser: User!
@@ -114,15 +114,51 @@ class FirebaseManager  {
                 
                     let business = Business()
                 
-                    business.name = data["Name"] as? String
-                    business.category = data["Category"] as? String
-                    business.street = data["Street Address"] as? String
-                    business.city = data["City"] as? String
-                    business.state = data["State"] as? String
-                    business.zip = data["Zip"] as? Int
+                    business.name = data["name"] as? String
+                    business.category = data["category"] as? String
+                    business.street = data["address"] as? String
+                    business.city = data["city"] as? String
+                    business.state = data["state"] as? String
+                    business.zip = data["zip"] as? Int
+                    business.phone = data["phone"] as? String
+                    business.lat = data["lat"] as? Double
+                    business.long = data["lng"] as? Double
+                    
+                    if business.lat == nil || business.long == nil {
+                        
+                        var address = ""
+                        address.append(business.street)
+                        address.append(", ")
+                        address.append(business.city)
+                        address.append(", ")
+                        address.append(business.state)
+                        address.append(", ")
+                        
+                        if business.zip != nil {
+                            address.append(String(business.zip!))
+                        }
+                        
+                        let geo_coder = CLGeocoder()
+                        
+                        geo_coder.geocodeAddressString(address) { (placemarks, error) in
+                            guard
+                                let placemarks = placemarks,
+                                let location = placemarks.first?.location
+                                else {
+                                    // handle no location found
+                                    return
+                            }
+                            
+                            business.lat = location.coordinate.latitude
+                            business.long = location.coordinate.longitude
+                            
+                            self.dataBaseMapReference.child(String(describing: data)).child("lat").setValue(business.lat)
+                            self.dataBaseMapReference.child(String(describing: data)).child("lng").setValue(business.long)
+                            
+                        }
+                    }
                     
                     businesses.append(business)
-                    
                 }
                 
             }

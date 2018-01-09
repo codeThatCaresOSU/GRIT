@@ -15,7 +15,10 @@ class Business {
     var street: String!
     var city: String!
     var state: String!
+    var phone: String!
     var zip: Int!
+    var lat: Double!
+    var long: Double!
     //var url: String!
     
     init() {

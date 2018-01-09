@@ -1,5 +1,5 @@
 //
-//  ModalViewController.swift
+//  FilterViewController.swift
 //  GRIT
 //
 //  Created by Jake Alvord on 10/19/17.
@@ -7,13 +7,13 @@
 //
 import UIKit
 
-protocol ModalViewControllerDelegate{
-    func dismiss(modalText: Array<String>)
+protocol FilterViewControllerDelegate {
+    func dismiss_filter(categories: Array<String>)
 }
 
-class ModalViewController: UIViewController {
+class FilterViewController: UIViewController {
     
-    var delegate: ModalViewControllerDelegate! = nil
+    var delegate: FilterViewControllerDelegate! = nil
     var fields = Array<String>()
     
     let food_button = UIButton()
@@ -125,9 +125,9 @@ class ModalViewController: UIViewController {
         
     }
     
-    @IBAction func dis(sender: UIButton) {
+    @objc func dis(sender: UIButton) {
         comp()
-        self.delegate.dismiss(modalText: fields)
+        self.delegate.dismiss_filter(categories: fields)
     }
     
     func buttonSetUp(name: String, sender: UIButton, num: Int, x_spot: CGFloat, y_spot: CGFloat, button_size: CGFloat, x_width: CGFloat, but: CGFloat, title: UILabel) {
@@ -201,7 +201,7 @@ class ModalViewController: UIViewController {
         
     }
     
-    @IBAction func button_tapped(sender: UIButton) {
+    @objc func button_tapped(sender: UIButton) {
         
         if sender.backgroundColor == colorMaster {
             sender.backgroundColor = UIColor.lightGray
