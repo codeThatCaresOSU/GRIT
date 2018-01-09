@@ -19,6 +19,7 @@ class Business {
     var zip: Int!
     var lat: Double!
     var long: Double!
+    var url: String!
     //var url: String!
     
     init() {

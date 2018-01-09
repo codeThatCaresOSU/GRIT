@@ -12,22 +12,18 @@ protocol TutorialViewControllerDelegate {
     func dismiss_tutorial()
 }
 
-class TutorialViewController : UIViewController, BasicsFirstPageDelegate, BasicsSecondPageDelegate, BasicsThirdPageDelegate {
+class TutorialViewController : UIViewController, BasicsFirstPageDelegate {
     
     var delegate: TutorialViewControllerDelegate! = nil
     
     let basics_first = BasicsFirstPage()
-    let basics_second = BasicsSecondPage()
-    let basics_third = BasicsThirdPage()
     
     let subview = UIView()
     let skip_tutorial = UIButton()
     
     override func viewDidLoad() {
-        
-        self.basics_first.delegate = self
-        self.basics_second.delegate = self
-        self.basics_third.delegate = self
+
+        self.basics_first.t_delegate = self as BasicsFirstPageDelegate
         
         subview.frame = self.view.bounds
         subview.backgroundColor = UIColor.white
@@ -49,7 +45,7 @@ class TutorialViewController : UIViewController, BasicsFirstPageDelegate, Basics
         skip_tutorial.layer.cornerRadius = 10
         skip_tutorial.layer.masksToBounds = true
         skip_tutorial.addTarget(self, action: #selector(skip), for: .touchUpInside)
-        
+                
         subview.addSubview(skip_tutorial)
         subview.addSubview(query_space)
         self.view.addSubview(subview)
@@ -114,19 +110,7 @@ class TutorialViewController : UIViewController, BasicsFirstPageDelegate, Basics
     }
     
     func dismiss_basics_first() {
-        self.basics_first.dismiss(animated: false, completion: nil)
-        basics_second.modalPresentationStyle = .overCurrentContext
-        self.present(self.basics_second, animated: false, completion: nil)
-    }
-    
-    func dismiss_basics_second() {
-        self.basics_second.dismiss(animated: false, completion: nil)
-        basics_third.modalPresentationStyle = .overCurrentContext
-        self.present(self.basics_third, animated: false, completion: nil)
-    }
-    
-    func dismiss_basics_third() {
-        self.basics_third.dismiss(animated: true, completion: nil)
+        self.basics_first.dismiss(animated: true, completion: nil)
         skip()
     }
     

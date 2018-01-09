@@ -123,6 +123,7 @@ class FirebaseManager  {
                     business.phone = data["phone"] as? String
                     business.lat = data["lat"] as? Double
                     business.long = data["lng"] as? Double
+                    business.url = data["url"] as? String
                     
                     if business.lat == nil || business.long == nil {
                         

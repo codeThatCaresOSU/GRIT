@@ -12,6 +12,7 @@ import CoreLocation
 
 class CustomAnnotation : MKPointAnnotation {
     var phone_number : String?
+    var url : String?
 }
 
 class ResourcesViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate, TutorialViewControllerDelegate, FilterViewControllerDelegate {
@@ -26,7 +27,7 @@ class ResourcesViewController: UIViewController, CLLocationManagerDelegate, MKMa
     let map = MKMapView()
     var selected_annotation: CustomAnnotation?
     let locale = CLLocationCoordinate2DMake(39.9612, -82.9988)
-    var phone_number: String?
+    var web_url: String?
     
     var food_view = Array<MKPointAnnotation>()
     var ged_view = Array<MKPointAnnotation>()
@@ -35,8 +36,8 @@ class ResourcesViewController: UIViewController, CLLocationManagerDelegate, MKMa
     var rec_view = Array<MKPointAnnotation>()
     
     let filter_button = UIButton()
-    let directions_button = UIButton()
-    let info_button = UIButton()
+    let route_button = UIButton()
+    let website_button = UIButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -79,30 +80,30 @@ class ResourcesViewController: UIViewController, CLLocationManagerDelegate, MKMa
         filter_button.setTitleColor(UIColor.white, for: .normal)
         filter_button.addTarget(self, action: #selector(show_filter), for: .touchUpInside)
         
-        // initializes the directions button
-        info_button.frame = CGRect(x: width - 1.5 * button_size - status_bar_height, y: height - 2 * button_size - 2 * status_bar_height, width: 1.5 * button_size, height: button_size)
-        info_button.layer.cornerRadius = button_size/4
-        info_button.layer.masksToBounds = true
-        info_button.backgroundColor = UIColor.lightGray
-        info_button.setTitle("Info", for: .normal)
-        info_button.setTitleColor(UIColor.white, for: .normal)
-        info_button.addTarget(self, action: #selector(send_to_phone), for: .touchUpInside)
-        info_button.isHidden = true
+        // initializes the info button
+        website_button.frame = CGRect(x: width/2 - button_size/2, y: height - button_size - status_bar_height, width: button_size, height: button_size)
+        website_button.layer.cornerRadius = button_size/2
+        website_button.layer.masksToBounds = true
+        website_button.backgroundColor = UIColor.blue
+        website_button.setTitle("Website", for: .normal)
+        website_button.setTitleColor(UIColor.white, for: .normal)
+        website_button.addTarget(self, action: #selector(send_to_website), for: .touchUpInside)
+        website_button.isHidden = true
         
         // initializes the directions button
-        directions_button.frame = CGRect(x: width - 1.5 * button_size - status_bar_height, y: height - button_size - status_bar_height, width: 1.5 * button_size, height: button_size)
-        directions_button.layer.cornerRadius = button_size/4
-        directions_button.layer.masksToBounds = true
-        directions_button.backgroundColor = UIColor.red
-        directions_button.setTitle("Directions", for: .normal)
-        directions_button.setTitleColor(UIColor.white, for: .normal)
-        directions_button.addTarget(self, action: #selector(send_to_maps), for: .touchUpInside)
-        directions_button.isHidden = true
+        route_button.frame = CGRect(x: width - button_size - status_bar_height, y: height - button_size - status_bar_height, width: button_size, height: button_size)
+        route_button.layer.cornerRadius = button_size/2
+        route_button.layer.masksToBounds = true
+        route_button.backgroundColor = UIColor.red
+        route_button.setTitle("Route", for: .normal)
+        route_button.setTitleColor(UIColor.white, for: .normal)
+        route_button.addTarget(self, action: #selector(send_to_maps), for: .touchUpInside)
+        route_button.isHidden = true
         
         sub_view.addSubview(map)
         sub_view.addSubview(filter_button)
-        sub_view.addSubview(directions_button)
-        sub_view.addSubview(info_button)
+        sub_view.addSubview(route_button)
+        sub_view.addSubview(website_button)
         self.view.addSubview(sub_view)
         
         populate(categories: ["Food", "Second Chance Employer", "G.E.D.", "Recovery", "Transportation"])
@@ -126,9 +127,20 @@ class ResourcesViewController: UIViewController, CLLocationManagerDelegate, MKMa
             
             case .denied, .restricted:
                 
-                let span = MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5)
-                let region = MKCoordinateRegion(center: locale, span: span)
-                map.setRegion(region, animated: true)
+                //let span = MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5)
+                //let region = MKCoordinateRegion(center: locale, span: span)
+                //map.setRegion(region, animated: true)
+                
+                let warning = UILabel()
+                warning.frame = self.view.bounds
+                warning.text = "Unfortunately, we need your location in order to help you access these resources.\n\nGRIT does not collect or share your data with ANYONE.\n\nPlease navigate to Settings > GRIT > Location and allow us to use your location."
+                warning.textColor = UIColor.white
+                warning.backgroundColor = UIColor.darkGray
+                warning.textAlignment = .center
+                warning.font = UIFont.systemFont(ofSize: 24)
+                warning.numberOfLines = 30
+                
+                self.view.addSubview(warning)
                 
                 break
             
@@ -139,7 +151,7 @@ class ResourcesViewController: UIViewController, CLLocationManagerDelegate, MKMa
                 
                 break
         }
-        
+        //show_tutorial()
     }
     
     func show_tutorial() {
@@ -172,27 +184,29 @@ class ResourcesViewController: UIViewController, CLLocationManagerDelegate, MKMa
         annotation.openInMaps()
     }
     
-    @objc func send_to_phone() {
-        if let url = URL(string: "tel://\(phone_number!)") {
-            print(url)
+    @objc func send_to_website() {
+        if let url = URL(string: web_url!) {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }
     }
     
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         self.selected_annotation = view.annotation as? CustomAnnotation
-        self.phone_number = self.selected_annotation?.phone_number
-        directions_button.isHidden = false
-        info_button.isHidden = false;
+        self.web_url = self.selected_annotation?.url
+        route_button.isHidden = false
+        
+        if self.web_url!.count > 1 {
+            website_button.isHidden = false
+        }
     }
     
     func mapView(_ mapView: MKMapView, didDeselect view: MKAnnotationView) {
-        directions_button.isHidden = true
-        info_button.isHidden = true
+        route_button.isHidden = true
+        website_button.isHidden = true
     }
     
     func populate(categories: Array<String>) {
-        
+
         FirebaseManager.sharedInstance.getBusinesses(flags: categories) {
             businesses in
             
@@ -206,8 +220,8 @@ class ResourcesViewController: UIViewController, CLLocationManagerDelegate, MKMa
                     pin.title = business.name
                     pin.subtitle = business.category
                     pin.phone_number = business.phone
+                    pin.url = business.url
                     
-                    print(business)
                     
                     if business.category == "Food" {
                         self.food_view.append(pin)
@@ -226,7 +240,7 @@ class ResourcesViewController: UIViewController, CLLocationManagerDelegate, MKMa
             }
             
         }
-        
+
     }
     
     func repopulate(categories: Array<String>) {

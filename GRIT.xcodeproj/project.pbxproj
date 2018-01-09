@@ -26,6 +26,7 @@
 		68EF93411EB57F5300496126 /* MentorListOfMenteesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68EF93401EB57F5300496126 /* MentorListOfMenteesTableViewCell.swift */; };
 		68EF93431EB5849B00496126 /* MenteeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68EF93421EB5849B00496126 /* MenteeTableViewController.swift */; };
 		712702031FD9ED0F0066E5DB /* BasicsThirdPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712702021FD9ED0F0066E5DB /* BasicsThirdPage.swift */; };
+		71273E72200472DB000F6100 /* tutorial_1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 71273E71200472DA000F6100 /* tutorial_1.jpeg */; };
 		716DE9151F9D6F4900A48F0E /* Business.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716DE9141F9D6F4900A48F0E /* Business.swift */; };
 		717C99121F9945810018F670 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717C99111F9945810018F670 /* FilterViewController.swift */; };
 		71E061BA1EB5BEE60089DDFB /* LaunchScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E061B91EB5BEE60089DDFB /* LaunchScreenController.swift */; };
@@ -66,6 +67,7 @@
 		68EF93421EB5849B00496126 /* MenteeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenteeTableViewController.swift; sourceTree = "<group>"; };
 		6B52795D5FFE81331E38C5C9 /* Pods-GRIT.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GRIT.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GRIT/Pods-GRIT.debug.xcconfig"; sourceTree = "<group>"; };
 		712702021FD9ED0F0066E5DB /* BasicsThirdPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicsThirdPage.swift; sourceTree = "<group>"; };
+		71273E71200472DA000F6100 /* tutorial_1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = tutorial_1.jpeg; path = ../../../Downloads/tutorial_1.jpeg; sourceTree = "<group>"; };
 		716DE9141F9D6F4900A48F0E /* Business.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Business.swift; sourceTree = "<group>"; };
 		717C99111F9945810018F670 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		71E061B91EB5BEE60089DDFB /* LaunchScreenController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchScreenController.swift; sourceTree = "<group>"; };
@@ -202,6 +204,7 @@
 		7136E97B1EDF672800899E39 /* Resources Images */ = {
 			isa = PBXGroup;
 			children = (
+				71273E71200472DA000F6100 /* tutorial_1.jpeg */,
 			);
 			name = "Resources Images";
 			sourceTree = "<group>";
@@ -387,6 +390,7 @@
 				9B319F761E959AFC003D7097 /* Main.storyboard in Resources */,
 				01A87FF81EA57AA200BAE383 /* Mentee.storyboard in Resources */,
 				24AEA6F81F7473E800E03FA6 /* GoogleService-Info.plist in Resources */,
+				71273E72200472DB000F6100 /* tutorial_1.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

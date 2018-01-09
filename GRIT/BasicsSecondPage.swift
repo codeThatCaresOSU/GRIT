@@ -8,24 +8,20 @@
 
 import UIKit
 
-protocol BasicsSecondPageDelegate {
-    func dismiss_basics_second()
-}
-
 class BasicsSecondPage : UIViewController {
     
-    var delegate: BasicsSecondPageDelegate! = nil
-    
     override func viewDidLoad() {
-        let button = UIButton()
-        button.frame = CGRect(x: 0, y: 0, width: self.view.bounds.width, height: self.view.bounds.height)
-        button.backgroundColor = UIColor.red
-        button.addTarget(self, action: #selector(second_dismiss), for: .touchUpInside)
-        self.view.addSubview(button)
+        
+        let welcome = UILabel()
+        welcome.frame = self.view.bounds
+        welcome.text = "Welcome!"
+        welcome.textAlignment = .center
+        welcome.font = UIFont.systemFont(ofSize: 36)
+        welcome.textColor = UIColor.white
+        welcome.backgroundColor = UIColor.black
+        
+        self.view.addSubview(welcome)
     }
-    
-    @objc func second_dismiss() {
-        self.delegate.dismiss_basics_second()
-    }
+
 }
 
