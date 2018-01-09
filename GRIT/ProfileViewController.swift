@@ -24,9 +24,8 @@ class ProfileViewController: UIViewController {
     private var ageLabel: UILabel!
     private var fromLabel: UILabel!
     private var roleLabel: UILabel!
-  
-    
-    
+    private var editButton: UIBarButtonItem!
+
     override func viewDidLoad() {
         self.currentUser = FirebaseManager.sharedInstance.getCurrentUser()
         self.setupView()
@@ -86,12 +85,12 @@ class ProfileViewController: UIViewController {
         self.roleLabel.textColor = UIColor.lightGray
         self.roleLabel.translatesAutoresizingMaskIntoConstraints = false
         
+        self.logoutButton = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(self.logoutPressed))
+        self.navigationItem.rightBarButtonItem = self.logoutButton
+        self.logoutButton.tintColor = UIColor.red
         
-        self.logoutButton = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(self.logoutPressed))
-
-        
-        
-        self.navigationController?.navigationBar.topItem?.title = "\(self.currentUser.firstName!) \(self.currentUser.lastName!)"
+        self.editButton = UIBarButtonItem(image: #imageLiteral(resourceName: "editButton"), style: .plain, target: self, action: #selector(self.editPressed))
+        self.navigationItem.leftBarButtonItem = self.editButton
         
         self.scrollView.addSubview(self.profileImageView)
         self.scrollView.addSubview(self.ageLabel)
@@ -102,8 +101,7 @@ class ProfileViewController: UIViewController {
         self.scrollView.addSubview(self.roleLabel)
         
         self.view.addSubview(self.scrollView)
-        
-        self.navigationItem.rightBarButtonItem = self.logoutButton
+    
         
         self.setupConstraints()
     }
@@ -142,5 +140,12 @@ class ProfileViewController: UIViewController {
     
     @objc func logoutPressed() {
         FirebaseManager.sharedInstance.logout()
+        CoredataManager.sharedInstance.deleteUserData()
+        NotificationCenter.default.post(Notification(name: Notification.Name(rawValue: "logout"), object: nil))
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    @objc func editPressed() {
+        print("Edit Button Press Success!")
     }
 }

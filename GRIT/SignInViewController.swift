@@ -17,10 +17,9 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
             
             // Make sue the viewController presentation is within the completionhandler
             
-          
-                let nav = UINavigationController(rootViewController: MenteeProfileViewController())
-                nav.navigationBar.topItem?.title = user.firstName
+            CoredataManager.sharedInstance.setUserData(email: self.emailField.text!, password: self.passwordField.text!, completion: {
                 NotificationCenter.default.post(Notification(name: Notification.Name(rawValue: "login"), object: nil))
+            })
 
         }
     }

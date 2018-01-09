@@ -5,6 +5,9 @@
 ## Goodbye.DS_Store you suck at everything
 .DS_Store
 
+## Node Modules for Cloud Functions
+node_modules/
+
 ## Build generated
 build/
 DerivedData/

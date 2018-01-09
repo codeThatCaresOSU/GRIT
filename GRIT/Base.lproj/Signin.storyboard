@@ -23,10 +23,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ApE-Hb-HEY" customClass="RoundBorderUIView" customModule="GRIT" customModuleProvider="target">
-                                <rect key="frame" x="16" y="36" width="343" height="566"/>
+                                <rect key="frame" x="16" y="56" width="343" height="546"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Qrb-7w-gks">
-                                        <rect key="frame" x="16" y="179.5" width="311" height="206.5"/>
+                                        <rect key="frame" x="16" y="169.5" width="311" height="206.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign In" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sHf-kh-SwO">
                                                 <rect key="frame" x="0.0" y="0.0" width="311" height="26.5"/>
