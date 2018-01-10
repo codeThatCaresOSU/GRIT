@@ -12,24 +12,32 @@ protocol TutorialViewControllerDelegate {
     func dismiss_tutorial()
 }
 
-class TutorialViewController : UIViewController, BasicsFirstPageDelegate {
+class TutorialViewController : UIViewController, BasicsFirstPageDelegate, AdvancedFirstPageDelegate {
     
     var delegate: TutorialViewControllerDelegate! = nil
     
     let basics_first = BasicsFirstPage()
+    let advanced_first = AdvancedFirstPage()
+    
+    var gradientLayer: CAGradientLayer!
+    var light_blue = UIColor(red: 0.0/255.0, green: 191.0/255.0, blue: 255.0/255.0, alpha: 1.0)
     
     let subview = UIView()
-    let skip_tutorial = UIButton()
+    //let skip_tutorial = UIButton()
     
     override func viewDidLoad() {
 
         self.basics_first.t_delegate = self as BasicsFirstPageDelegate
+        self.advanced_first.a_delegate = self as AdvancedFirstPageDelegate
+        
+        gradientLayer = CAGradientLayer()
+        gradientLayer.frame = self.view.bounds
+        gradientLayer.colors = [UIColor.orange.cgColor, light_blue.cgColor]
         
         subview.frame = self.view.bounds
-        subview.backgroundColor = UIColor.white
-                
-        let total_height = subview.bounds.height
+        subview.layer.addSublayer(gradientLayer)
         
+        let total_height = subview.bounds.height
         let width = subview.bounds.width
         let height = (11 * total_height)/12
         
@@ -37,7 +45,7 @@ class TutorialViewController : UIViewController, BasicsFirstPageDelegate {
         query_space.frame = CGRect(x: 0, y: 0, width: width, height: height)
         
         first_question(view: query_space, width: width, height: height)
-        
+        /*
         skip_tutorial.frame = CGRect(x: 5, y: height + 5, width: width - 10, height: total_height - height - 10)
         skip_tutorial.setTitle("Skip Tutorial", for: .normal)
         skip_tutorial.setTitleColor(UIColor.white, for: .normal)
@@ -45,8 +53,8 @@ class TutorialViewController : UIViewController, BasicsFirstPageDelegate {
         skip_tutorial.layer.cornerRadius = 10
         skip_tutorial.layer.masksToBounds = true
         skip_tutorial.addTarget(self, action: #selector(skip), for: .touchUpInside)
-                
-        subview.addSubview(skip_tutorial)
+            */
+        //subview.addSubview(skip_tutorial)
         subview.addSubview(query_space)
         self.view.addSubview(subview)
     }
@@ -59,10 +67,11 @@ class TutorialViewController : UIViewController, BasicsFirstPageDelegate {
         let question_label = UILabel()
         question_label.frame = CGRect(x: width/16, y: height/8, width: width * (14/16), height: height/4)
         question_label.font = UIFont.systemFont(ofSize: 30, weight: UIFont.Weight.thin)
+        question_label.textColor = UIColor.white
         question_label.numberOfLines = 4
         question_label.text = "How experienced are you with applications / smartphones?"
-        question_label.layer.borderColor = successColor.cgColor
-        question_label.layer.borderWidth = 4
+        //question_label.layer.borderColor = successColor.cgColor
+        //question_label.layer.borderWidth = 4
         question_label.layer.masksToBounds = true
         question_label.layer.cornerRadius = 10
         question_label.textAlignment = .center
@@ -83,11 +92,12 @@ class TutorialViewController : UIViewController, BasicsFirstPageDelegate {
         somewhat.setTitleColor(UIColor.white, for: .normal)
         somewhat.layer.cornerRadius = 10
         somewhat.layer.masksToBounds = true
+        somewhat.addTarget(self, action: #selector(show_advanced_first), for: .touchUpInside)
         
         let very = UIButton()
         very.frame = CGRect(x: width/16, y: height * (13/16), width: width * (14/16), height: height/8)
         very.backgroundColor = colorMaster
-        very.setTitle("Very", for: .normal)
+        very.setTitle("Very (Skip Tutorial)", for: .normal)
         very.setTitleColor(UIColor.white, for: .normal)
         very.layer.cornerRadius = 10
         very.layer.masksToBounds = true
@@ -111,6 +121,16 @@ class TutorialViewController : UIViewController, BasicsFirstPageDelegate {
     
     func dismiss_basics_first() {
         self.basics_first.dismiss(animated: true, completion: nil)
+        skip()
+    }
+    
+    @objc func show_advanced_first() {
+        advanced_first.modalPresentationStyle = .overCurrentContext
+        self.present(self.advanced_first, animated: true, completion: nil)
+    }
+    
+    func dismiss_advanced_first() {
+        self.advanced_first.dismiss(animated: true, completion: nil)
         skip()
     }
     

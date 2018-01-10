@@ -1,28 +1,25 @@
 //
-//  BasicsFirstPage.swift
+//  AdvancedFirstPage.swift
 //  GRIT
 //
-//  Created by Jake Alvord on 12/7/17.
-//  Copyright © 2017 CodeThatCares. All rights reserved.
+//  Created by Jake Alvord on 1/9/18.
+//  Copyright © 2018 CodeThatCares. All rights reserved.
 //
 
 import UIKit
 
-protocol BasicsFirstPageDelegate {
-    func dismiss_basics_first()
+protocol AdvancedFirstPageDelegate {
+    func dismiss_advanced_first()
 }
 
-class BasicsFirstPage : UIPageViewController, UIPageViewControllerDataSource, BasicsSeventhPageDelegate, BasicsLastBackToFirst {
+class AdvancedFirstPage : UIPageViewController, UIPageViewControllerDataSource, AdvancedFourthPageDelegate, AdvancedBackToFirst {
+    
+    var a_delegate: AdvancedFirstPageDelegate! = nil
+    
+    let a_sec = AdvancedSecondPage()
+    let a_thi = AdvancedThirdPage()
+    let a_fou = AdvancedFourthPage()
 
-    var t_delegate: BasicsFirstPageDelegate! = nil
-    
-    let b_sec = BasicsSecondPage()
-    let b_thi = BasicsThirdPage()
-    let b_fou = BasicsFourthPage()
-    let b_fif = BasicsFifthPage()
-    let b_six = BasicsSixthPage()
-    let b_sev = BasicsSeventhPage()
-    
     var views : [UIViewController]? = nil
     
     var index = 0
@@ -39,14 +36,14 @@ class BasicsFirstPage : UIPageViewController, UIPageViewControllerDataSource, Ba
         
         dataSource = self
         
-        views = [b_sec, b_thi, b_fou, b_fif, b_six, b_sev]
+        views = [a_sec, a_thi, a_fou]
         
         if let first_view = views?.first {
             setViewControllers([first_view], direction: .forward, animated: true, completion: nil)
         }
         
-        self.b_sev.delegate = self
-        self.b_sev.redelegate = self
+        self.a_fou.delegate = self
+        self.a_fou.redelegate = self
         
     }
     
@@ -57,7 +54,6 @@ class BasicsFirstPage : UIPageViewController, UIPageViewControllerDataSource, Ba
         }
         
         let previousIndex = viewControllerIndex - 1
-        index = previousIndex
         
         guard previousIndex >= 0 else {
             return nil
@@ -78,7 +74,6 @@ class BasicsFirstPage : UIPageViewController, UIPageViewControllerDataSource, Ba
         }
         
         let nextIndex = viewControllerIndex + 1
-        index = nextIndex
         let orderedViewControllersCount = views?.count
         
         guard orderedViewControllersCount != nextIndex else {
@@ -94,18 +89,16 @@ class BasicsFirstPage : UIPageViewController, UIPageViewControllerDataSource, Ba
     }
     
     @objc func first_dismiss() {
-        self.t_delegate.dismiss_basics_first()
+        self.a_delegate.dismiss_advanced_first()
     }
     
-    func dismiss_basics_last() {
+    func dismiss_advanced_last() {
         first_dismiss()
     }
     
-    func back_to_front() {
+    func back_to_beginning() {
         if let first_view = views?.first {
             setViewControllers([first_view], direction: .forward, animated: true, completion: nil)
         }
     }
-    
- 
 }

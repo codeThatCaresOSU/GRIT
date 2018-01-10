@@ -1,17 +1,17 @@
 //
-//  BasicsSecondPage.swift
+//  AdvancedSecondPage.swift
 //  GRIT
 //
-//  Created by Jake Alvord on 12/7/17.
-//  Copyright © 2017 CodeThatCares. All rights reserved.
+//  Created by Jake Alvord on 1/9/18.
+//  Copyright © 2018 CodeThatCares. All rights reserved.
 //
 
 import UIKit
 
-class BasicsSecondPage : UIViewController {
+class AdvancedSecondPage : UIViewController {
     
     override func viewDidLoad() {
-                
+        
         let width = self.view.bounds.width
         let height = self.view.bounds.height
         
@@ -44,6 +44,5 @@ class BasicsSecondPage : UIViewController {
         self.view.addSubview(message)
         self.view.addSubview(swipe)
     }
-
+    
 }
-
