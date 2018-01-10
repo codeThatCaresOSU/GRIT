@@ -146,12 +146,12 @@ class ResourcesViewController: UIViewController, CLLocationManagerDelegate, MKMa
             
             default:
                 
-                //show_tutorial()
+                show_tutorial()
                 manager.requestWhenInUseAuthorization()
                 
                 break
         }
-        show_tutorial()
+        //show_tutorial()
     }
     
     func show_tutorial() {
