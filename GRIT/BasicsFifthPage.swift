@@ -28,17 +28,18 @@ class BasicsFifthPage : UIViewController {
         background.layer.addSublayer(gradientLayer)
         
         let image = UIImageView()
-        image.image = #imageLiteral(resourceName: "tutorial_1.jpeg")
-        image.frame = CGRect(x: (width - 3*width/4)/2, y: status_bar_height*2, width: 3*width/4, height: 3*height/4)
+        image.image = #imageLiteral(resourceName: "tutorial_3.jpeg")
+        image.frame = CGRect(x: (width - 5*width/8)/2, y: status_bar_height*2, width: 5*width/8, height: 5*height/8)
         
         let message = UILabel()
-        message.frame = CGRect(x: width/8, y: (3 * height)/4 + status_bar_height*3, width: 3*width/4, height: height/8)
-        message.text = "Lorem ipsum buncha i have no idea what to write ya ya dad adda pball idk idk idk"
+        message.frame = CGRect(x: width/8, y: 5*height/8 + status_bar_height*3, width: 3*width/4, height: height/4)
+        message.text = "Tap on any map location to have more buttons appear. The blue will redirect you to the businesses website while the red will show you the location in Maps. Tap anywhere else on the screen to make them disappear"
         message.layer.cornerRadius = 10
         message.layer.masksToBounds = true
         message.numberOfLines = 10
         message.font = UIFont.systemFont(ofSize: 16)
-        
+        message.textAlignment = .center
+
         self.view.addSubview(background)
         self.view.addSubview(image)
         self.view.addSubview(message)

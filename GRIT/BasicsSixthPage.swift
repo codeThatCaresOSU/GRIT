@@ -38,6 +38,7 @@ class BasicsSixthPage : UIViewController {
         message.layer.masksToBounds = true
         message.numberOfLines = 10
         message.font = UIFont.systemFont(ofSize: 16)
+        message.textAlignment = .center
         
         self.view.addSubview(background)
         self.view.addSubview(image)

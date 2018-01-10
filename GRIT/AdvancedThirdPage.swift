@@ -33,11 +33,12 @@ class AdvancedThirdPage : UIViewController {
         
         let message = UILabel()
         message.frame = CGRect(x: width/8, y: (3 * height)/4 + status_bar_height*3, width: 3*width/4, height: height/8)
-        message.text = "Lorem ipsum buncha i have no idea what to write ya ya dad adda pball idk idk idk"
+        message.text = "Tap on the filter button to choose the resources you need. Tap on any of the locations that appear to learn more about them."
         message.layer.cornerRadius = 10
         message.layer.masksToBounds = true
         message.numberOfLines = 10
         message.font = UIFont.systemFont(ofSize: 16)
+        message.textAlignment = .center
         
         self.view.addSubview(background)
         self.view.addSubview(image)

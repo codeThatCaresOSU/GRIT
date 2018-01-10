@@ -36,6 +36,7 @@
 		7159F58220056A7700E0B8EE /* AdvancedFourthPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7159F58120056A7700E0B8EE /* AdvancedFourthPage.swift */; };
 		7159F77E2005BE9300E0B8EE /* tutorial_1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 7159F77D2005BE9300E0B8EE /* tutorial_1.jpeg */; };
 		7159F7802005BFE400E0B8EE /* tutorial_2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 7159F77F2005BFE400E0B8EE /* tutorial_2.jpeg */; };
+		716D7BD52005C3F90064E328 /* tutorial_3.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 716D7BD42005C3F90064E328 /* tutorial_3.jpeg */; };
 		716DE9151F9D6F4900A48F0E /* Business.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716DE9141F9D6F4900A48F0E /* Business.swift */; };
 		717C99121F9945810018F670 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717C99111F9945810018F670 /* FilterViewController.swift */; };
 		71E061BA1EB5BEE60089DDFB /* LaunchScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E061B91EB5BEE60089DDFB /* LaunchScreenController.swift */; };
@@ -86,6 +87,7 @@
 		7159F58120056A7700E0B8EE /* AdvancedFourthPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedFourthPage.swift; sourceTree = "<group>"; };
 		7159F77D2005BE9300E0B8EE /* tutorial_1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = tutorial_1.jpeg; path = Images/tutorial_1.jpeg; sourceTree = SOURCE_ROOT; };
 		7159F77F2005BFE400E0B8EE /* tutorial_2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = tutorial_2.jpeg; path = Images/tutorial_2.jpeg; sourceTree = SOURCE_ROOT; };
+		716D7BD42005C3F90064E328 /* tutorial_3.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = tutorial_3.jpeg; path = Images/tutorial_3.jpeg; sourceTree = SOURCE_ROOT; };
 		716DE9141F9D6F4900A48F0E /* Business.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Business.swift; sourceTree = "<group>"; };
 		717C99111F9945810018F670 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		71E061B91EB5BEE60089DDFB /* LaunchScreenController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchScreenController.swift; sourceTree = "<group>"; };
@@ -230,8 +232,9 @@
 		7136E97B1EDF672800899E39 /* Resources Images */ = {
 			isa = PBXGroup;
 			children = (
-				7159F77F2005BFE400E0B8EE /* tutorial_2.jpeg */,
 				7159F77D2005BE9300E0B8EE /* tutorial_1.jpeg */,
+				7159F77F2005BFE400E0B8EE /* tutorial_2.jpeg */,
+				716D7BD42005C3F90064E328 /* tutorial_3.jpeg */,
 			);
 			name = "Resources Images";
 			sourceTree = "<group>";
@@ -415,6 +418,7 @@
 				9B3796E91E8CB76400453245 /* Assets.xcassets in Resources */,
 				7159F7802005BFE400E0B8EE /* tutorial_2.jpeg in Resources */,
 				9B3796E71E8CB76400453245 /* Signin.storyboard in Resources */,
+				716D7BD52005C3F90064E328 /* tutorial_3.jpeg in Resources */,
 				9B319F761E959AFC003D7097 /* Main.storyboard in Resources */,
 				01A87FF81EA57AA200BAE383 /* Mentee.storyboard in Resources */,
 				24AEA6F81F7473E800E03FA6 /* GoogleService-Info.plist in Resources */,
@@ -658,6 +662,7 @@
 		};
 		9B3796F11E8CB76400453245 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6B52795D5FFE81331E38C5C9 /* Pods-GRIT.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -683,6 +688,7 @@
 		};
 		9B3796F21E8CB76400453245 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C1187EEDA4F3D48DD0036666 /* Pods-GRIT.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";

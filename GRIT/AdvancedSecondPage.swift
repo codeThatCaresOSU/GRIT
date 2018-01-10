@@ -10,10 +10,21 @@ import UIKit
 
 class AdvancedSecondPage : UIViewController {
     
+    var gradientLayer: CAGradientLayer!
+    var light_blue = UIColor(red: 0.0/255.0, green: 191.0/255.0, blue: 255.0/255.0, alpha: 1.0)
+    
     override func viewDidLoad() {
         
         let width = self.view.bounds.width
         let height = self.view.bounds.height
+        
+        gradientLayer = CAGradientLayer()
+        gradientLayer.frame = self.view.bounds
+        gradientLayer.colors = [UIColor.orange.cgColor, light_blue.cgColor]
+        
+        let background = UIView()
+        background.frame = self.view.bounds
+        background.layer.addSublayer(gradientLayer)
         
         let welcome = UILabel()
         welcome.frame = CGRect(x: 0, y: 0, width: width, height: height/3)
@@ -40,6 +51,7 @@ class AdvancedSecondPage : UIViewController {
         swipe.textColor = UIColor.white
         swipe.backgroundColor = UIColor.black
         
+        self.view.addSubview(background)
         self.view.addSubview(welcome)
         self.view.addSubview(message)
         self.view.addSubview(swipe)
