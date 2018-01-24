@@ -33,7 +33,7 @@ class BasicsFourthPage : UIViewController {
         
         let message = UILabel()
         message.frame = CGRect(x: width/8, y: (3 * height)/4 + status_bar_height*3, width: 3*width/4, height: height/8)
-        message.text = "Press any number of button on the left to see their specific locations"
+        message.text = "Press any number of buttons on the left to see their specific locations"
         message.layer.cornerRadius = 10
         message.layer.masksToBounds = true
         message.numberOfLines = 10

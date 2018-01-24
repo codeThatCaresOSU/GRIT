@@ -33,6 +33,7 @@ class AdvancedSecondPage : UIViewController {
         welcome.font = UIFont.systemFont(ofSize: 36)
         welcome.textColor = UIColor.white
         welcome.backgroundColor = UIColor.black
+        welcome.numberOfLines = 3
         
         let message = UILabel()
         message.frame = CGRect(x: 0, y: height/3, width: width, height: height/3)
@@ -41,7 +42,7 @@ class AdvancedSecondPage : UIViewController {
         message.font = UIFont.systemFont(ofSize: 28)
         message.textColor = UIColor.white
         message.backgroundColor = UIColor.black
-        message.numberOfLines = 3
+        message.numberOfLines = 10
         
         let swipe = UILabel()
         swipe.frame = CGRect(x: 0, y: 2*height/3, width: width, height: height/3)
@@ -50,6 +51,7 @@ class AdvancedSecondPage : UIViewController {
         swipe.font = UIFont.systemFont(ofSize: 14)
         swipe.textColor = UIColor.white
         swipe.backgroundColor = UIColor.black
+        swipe.numberOfLines = 3
         
         self.view.addSubview(background)
         self.view.addSubview(welcome)

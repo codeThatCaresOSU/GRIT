@@ -32,14 +32,15 @@ class BasicsSecondPage : UIViewController {
         welcome.textAlignment = .center
         welcome.font = UIFont.systemFont(ofSize: 36)
         welcome.textColor = UIColor.white
+        welcome.numberOfLines = 3
         
         let message = UILabel()
         message.frame = CGRect(x: width/8, y: height/3, width: 3*width/4, height: height/3)
         message.text = "This tutorial will outline some helpful hints and tips to get you familiarized with using our app"
         message.textAlignment = .center
-        message.font = UIFont.systemFont(ofSize: 28)
+        message.font = UIFont.systemFont(ofSize: 24)
         message.textColor = UIColor.white
-        message.numberOfLines = 8
+        message.numberOfLines = 18
         
         let swipe = UILabel()
         swipe.frame = CGRect(x: width/8, y: 2*height/3, width: 3*width/4, height: height/3)
@@ -47,6 +48,7 @@ class BasicsSecondPage : UIViewController {
         swipe.textAlignment = .center
         swipe.font = UIFont.systemFont(ofSize: 14)
         swipe.textColor = UIColor.white
+        swipe.numberOfLines = 2
         
         self.view.addSubview(background)
         self.view.addSubview(welcome)

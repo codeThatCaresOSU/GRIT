@@ -33,7 +33,7 @@ class BasicsFifthPage : UIViewController {
         
         let message = UILabel()
         message.frame = CGRect(x: width/8, y: 5*height/8 + status_bar_height*3, width: 3*width/4, height: height/4)
-        message.text = "Tap on any map location to have more buttons appear. The blue will redirect you to the businesses website while the red will show you the location in Maps. Tap anywhere else on the screen to make them disappear"
+        message.text = "Tap on any map location to have more buttons appear. The blue will redirect you to the business's website while the red will show you the location in Maps. Tap anywhere else on the screen to make them disappear"
         message.layer.cornerRadius = 10
         message.layer.masksToBounds = true
         message.numberOfLines = 10
