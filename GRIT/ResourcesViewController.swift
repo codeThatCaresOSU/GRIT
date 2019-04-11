@@ -1,7 +1,7 @@
 //
 //  ResourcesViewController.swift
 //  GRIT
-//
+//BAD
 //  Created by Jake Alvord on 4/30/17.
 //  Copyright © 2017 CodeThatCares. All rights reserved.
 //
